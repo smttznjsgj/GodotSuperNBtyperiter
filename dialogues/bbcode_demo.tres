@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://0wqd884i33k"]
+
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="1_dialogue"]
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="1_lecfa"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="2_633oe"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="2_group"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="4_o70i6"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="5_57tpd"]
+
+[sub_resource type="Resource" id="Resource_bold_italic"]
+script = ExtResource("1_dialogue")
+content = "[b]粗体[/b]  [i]斜体[/i]  [u]下划线[/u]  [s]删除线[/s]  [b][i][u]三重混合[/u][/i][/b]"
+character_name = "格式测试"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_color"]
+script = ExtResource("1_dialogue")
+content = "预置色: [color=red]红[/color] [color=blue]蓝[/color] [color=green]绿[/color] [color=yellow]黄[/color] [color=purple]紫[/color]
+十六进制: [color=#ff6600]橙色[/color] [color=#00ccff]天蓝[/color] [color=#ff69b4]粉红[/color]
+带透明: [color=#88ffffff]半透白[/color] [color=#44ff0000]半透红[/color]"
+character_name = "颜色测试"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_font_size"]
+script = ExtResource("1_dialogue")
+content = "默认尺寸 [font_size=28]28号字[/font_size] [font_size=36]36号大号[/font_size] [font_size=12]12号小字[/font_size] 恢复正常"
+character_name = "字号测试"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_font_switch"]
+script = ExtResource("1_dialogue")
+content = "默认字体，然后切成 [font=res://素材/Fonts/Determination Mono.otf]Determination Mono等宽字体[/font] ，再切到 [font=res://素材/Fonts/方正少儿_GBK.ttf]方正少儿[/font] 看看效果"
+character_name = "字体切换"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_shake"]
+script = ExtResource("1_dialogue")
+content = "这句话很平稳。但是 [shake rate=20 level=5]这几个字在狂抖！！[/shake] 抖完了就恢复了。"
+character_name = "抖动效果"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_wave"]
+script = ExtResource("1_dialogue")
+content = "平静的文字。然后 [wave amp=30 freq=2]波浪上升下降上升下降[/wave] 结束了。"
+character_name = "波浪效果"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_tornado"]
+script = ExtResource("1_dialogue")
+content = "原地不动。 [tornado radius=10 freq=1.5]这几个字在画圆圈[/tornado] 停下来了。"
+character_name = "旋风效果"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_rainbow"]
+script = ExtResource("1_dialogue")
+content = "普通文字。接下来是 [rainbow freq=0.3 sat=10 val=20]七彩循环变色文字[/rainbow] ，是不是很炫。"
+character_name = "彩虹效果"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_pulse"]
+script = ExtResource("1_dialogue")
+content = "正常大小。 [pulse freq=3 ease=-2]心跳脉冲缩放!!![/pulse] 恢复了。"
+character_name = "脉冲效果"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_fade"]
+script = ExtResource("1_dialogue")
+content = "前面可见， [fade start=2 length=10]这一段渐渐消失了……[/fade] 后面恢复可见。"
+character_name = "渐隐效果"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_ghost"]
+script = ExtResource("1_dialogue")
+content = "正常文字。 [ghost freq=5 span=10]这几个字有幽灵重影[/ghost] 结束了。"
+character_name = "幽灵叠影"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_combo"]
+script = ExtResource("1_dialogue")
+content = "组合技来了——
+[center]居中大标题 [shake rate=15 level=3][color=#ff4444]颤抖的红字[/color][/shake][/center]
+然后 [wave amp=25 freq=3][color=#44aaff][b]加粗蓝字波浪[/b][/color][/wave]
+最后 [rainbow freq=0.5][shake rate=10 level=2]彩虹抖动[/shake][/rainbow]"
+character_name = "组合测试"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_align"]
+script = ExtResource("1_dialogue")
+content = "左对齐默认。
+[center]这是居中对齐的文字[/center]
+[right]这是右对齐的文字[/right]
+[fill]这句话会拉伸填满整行宽度，适合做特殊排版效果[/fill]"
+character_name = "对齐排版"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_dropcap"]
+script = ExtResource("1_dialogue")
+content = "[dropcap font_size=56 color=#ffaa00 margins=0,-8,0,-10]从[/dropcap]前有座山，山里有座庙，庙里有个老和尚在讲故事。讲的什么呢？讲的是从前有座山……这就是一个首字下沉的效果，第一行那个大字占了两行的高度，适合做叙事开头的装饰。"
+character_name = "首字下沉"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_end"]
+script = ExtResource("1_dialogue")
+content = "以上就是 Godot RichTextLabel 内置 BBCode 的全部效果演示。
+[color=#888888]* 注意：粗体斜体需要 RichTextLabel 设置了对应的 custom font 才能生效[/color]
+[color=#888888]* 速度控制和 NPC 事件触发器属于自定义控制符，下一步实现[/color]"
+character_name = "演示结束"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("2_group")
+dialogue_list = Array[ExtResource("1_dialogue")]([SubResource("Resource_bold_italic"), SubResource("Resource_color"), SubResource("Resource_font_size"), SubResource("Resource_font_switch"), SubResource("Resource_shake"), SubResource("Resource_wave"), SubResource("Resource_tornado"), SubResource("Resource_rainbow"), SubResource("Resource_pulse"), SubResource("Resource_fade"), SubResource("Resource_ghost"), SubResource("Resource_combo"), SubResource("Resource_align"), SubResource("Resource_dropcap"), SubResource("Resource_end")])
+id = "bbcode_demo"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
