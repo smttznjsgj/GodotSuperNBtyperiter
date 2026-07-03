@@ -11,6 +11,8 @@ class_name Dialogue
 @export var character_name : String
 @export var show_on_left : bool
 @export_group("Advanced")
+@export var can_skip: bool = true
+@export var auto_continue: bool = false
 @export var effect_sound: AudioStream
 @export var typing_speed : float = 0.05
 @export var text_color: Color = Color.WHITE

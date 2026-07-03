@@ -12,11 +12,13 @@
 [ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_sbee0"]
 [ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="7_eel6g"]
 [ext_resource type="PackedScene" uid="uid://op6qmkjr4a3v" path="res://对象/NPC们/npc_choice_test.tscn" id="10_sbee0"]
-[ext_resource type="Resource" uid="uid://qbtkfgw5kgju" path="res://dialogues/四个选项的对话.tres" id="11_eel6g"]
+[ext_resource type="Script" uid="uid://bsko0xhx61xck" path="res://dialogue_script/effects_script/Choice_effects/choice_snap_effect.gd" id="13_6naqk"]
+[ext_resource type="Script" uid="uid://o5w5t5g5q8oj" path="res://dialogue_script/effects_script/Choice_effects/choice_wobbel_effect.gd" id="14_8ajjh"]
 [ext_resource type="PackedScene" uid="uid://cevidcc5uhh41" path="res://对象/NPC基类/高级效果对话.tscn" id="14_vcrkc"]
 [ext_resource type="Script" uid="uid://erbvo1gibc3o" path="res://dialogue_script/effects_script/effect_wobble.gd" id="15_f40vf"]
 [ext_resource type="Script" uid="uid://dsfm23hvgynuq" path="res://dialogue_script/effects_script/effect_shake.gd" id="16_pt8ia"]
-[ext_resource type="Resource" path="res://dialogues/bbcode_demo.tres" id="17_wswju"]
+[ext_resource type="Resource" uid="uid://0wqd884i33k" path="res://dialogues/bbcode_demo.tres" id="17_wswju"]
+[ext_resource type="PackedScene" uid="uid://8raimy7g01cr" path="res://对象/NPC们/不能跳过的对话测试.tscn" id="18_g1cbb"]
 
 [sub_resource type="Resource" id="Resource_psmef"]
 script = ExtResource("5_j4i0s")
@@ -218,6 +220,34 @@ id = "A4"
 require_flag = "be friend1,be friend2"
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
+[sub_resource type="Resource" id="Resource_j6tkj"]
+script = ExtResource("13_6naqk")
+speed = 200.0
+use_ease = false
+overshoot_amount = 10.0
+block_input = true
+metadata/_custom_type_script = "uid://bsko0xhx61xck"
+
+[sub_resource type="Resource" id="Resource_07wyn"]
+script = ExtResource("5_j4i0s")
+content = "*这是对话的选项测试！"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_u0k5b"]
+script = ExtResource("5_j4i0s")
+content = "*选一个吧！"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_qwmya"]
+script = ExtResource("4_xg7ot")
+dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_07wyn"), SubResource("Resource_u0k5b")])
+id = "choice0"
+next_id = "choice1"
+choices = Array[String](["process", "process", "11111111", "11111"])
+choice_next_ids = Array[String](["choice1", "choice2", "choice3", "choice4"])
+choice_effect = SubResource("Resource_j6tkj")
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
 [sub_resource type="Resource" id="Resource_f7ecs"]
 script = ExtResource("5_j4i0s")
 content = "*第一个选项！"
@@ -278,6 +308,14 @@ dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_u1a2t")])
 id = "end"
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
+[sub_resource type="Resource" id="Resource_wfrtq"]
+script = ExtResource("14_8ajjh")
+magnitude = 10.0
+count = 20
+speed = 0.01
+decay = 1.0
+metadata/_custom_type_script = "uid://o5w5t5g5q8oj"
+
 [sub_resource type="Resource" id="Resource_pppdl"]
 script = ExtResource("5_j4i0s")
 content = "*这是对话的选项测试！"
@@ -295,6 +333,7 @@ id = "choice0"
 next_id = "nochoice"
 choices = Array[String](["choice1", "choice2", "choice3", "这个对话会打开箱子"])
 choice_next_ids = Array[String](["choice1", "choice2", "choice3", "choice4"])
+choice_effect = SubResource("Resource_wfrtq")
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
 [sub_resource type="Resource" id="Resource_v5ujg"]
@@ -467,6 +506,43 @@ id = "N1"
 next_id = "N1"
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
+[sub_resource type="Resource" id="Resource_uqxfg"]
+script = ExtResource("5_j4i0s")
+content = "*这。是。一。句。你。不。能。跳。过。的。对话。"
+can_skip = false
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_36b4k"]
+script = ExtResource("5_j4i0s")
+content = "*这句话是连着下一句话的"
+can_skip = false
+auto_continue = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_stgmk"]
+script = ExtResource("5_j4i0s")
+content = "你不用跳过自动帮你跳这一句"
+can_skip = false
+auto_continue = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_hcv10"]
+script = ExtResource("5_j4i0s")
+content = "到这一句停下，你自己动手"
+can_skip = false
+auto_continue = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_naavx"]
+script = ExtResource("5_j4i0s")
+content = "结束。"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_n4krp"]
+script = ExtResource("4_xg7ot")
+dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_uqxfg"), SubResource("Resource_36b4k"), SubResource("Resource_stgmk"), SubResource("Resource_hcv10"), SubResource("Resource_naavx")])
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
 [node name="Node2D" type="Node2D" unique_id=1019973989]
 
 [node name="Player" parent="." unique_id=1997236098 instance=ExtResource("1_ton2f")]
@@ -493,7 +569,7 @@ position = Vector2(442, 109)
 [node name="四个选项对话的测试" parent="." unique_id=446920957 instance=ExtResource("10_sbee0")]
 position = Vector2(245.00002, 187)
 scale = Vector2(3, 3)
-dialogue_groups = Array[ExtResource("4_xg7ot")]([ExtResource("11_eel6g"), SubResource("Resource_b11wq"), SubResource("Resource_wvjs4"), SubResource("Resource_0ubw4"), SubResource("Resource_5dinp"), SubResource("Resource_2et4b")])
+dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_qwmya"), SubResource("Resource_b11wq"), SubResource("Resource_wvjs4"), SubResource("Resource_0ubw4"), SubResource("Resource_5dinp"), SubResource("Resource_2et4b")])
 
 [node name="两个选项对话测试" parent="." unique_id=806315091 instance=ExtResource("10_sbee0")]
 position = Vector2(244, 276)
@@ -508,3 +584,7 @@ dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_ceo0u")])
 position = Vector2(591, 287)
 scale = Vector2(2, 2)
 dialogue_groups = Array[ExtResource("4_xg7ot")]([ExtResource("17_wswju")])
+
+[node name="不能跳过的对话与自动连续的测试" parent="." unique_id=612705368 instance=ExtResource("18_g1cbb")]
+position = Vector2(596, 357)
+dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_n4krp")])

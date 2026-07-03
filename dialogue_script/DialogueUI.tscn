@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dqku6dkv51lsp" path="res://dialogue_script/ChoiceItem.tscn" id="4_lgx41"]
 [ext_resource type="Script" uid="uid://c1qseip32cels" path="res://dialogue_script/effects_script/effect_ghost.gd" id="4_yjy76"]
 
+[sub_resource type="Theme" id="Theme_yjy76"]
+
 [sub_resource type="RichTextEffect" id="RichTextEffect_mekwl"]
 script = ExtResource("4_yjy76")
 
@@ -48,7 +50,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -128.0
+offset_top = -161.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -62,6 +64,7 @@ stretch_mode = 5
 [node name="Panel" type="Panel" parent="container/DialogueBox" unique_id=158881218]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = SubResource("Theme_yjy76")
 
 [node name="MarginContainer" type="MarginContainer" parent="container/DialogueBox/Panel" unique_id=1189553909]
 layout_mode = 1
@@ -86,7 +89,7 @@ text = "name"
 
 [node name="content" type="RichTextLabel" parent="container/DialogueBox/Panel/MarginContainer/VBoxContainer" unique_id=1671311458]
 clip_contents = false
-custom_minimum_size = Vector2(20, 80)
+custom_minimum_size = Vector2(20, 100)
 layout_mode = 2
 bbcode_enabled = true
 text = "AAAAAAAAAAAAA"

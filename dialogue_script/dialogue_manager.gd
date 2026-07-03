@@ -26,6 +26,8 @@ var choices_active: bool = false
 var current_choice_index: int = 0
 var choices_first_nav: bool = true
 var heart_tween: Tween
+## SnapEffect 追踪红心屏幕坐标，用于滑动传送的起点
+var _heart_global_tracker: Vector2 = Vector2.ZERO
 @export var heart_move_duration: float = 0.08
 
 @export_group("dialogue")
@@ -87,6 +89,8 @@ func display_next_dialogue() -> void:
 	var processed_content = dialogue.content.replace("{name}", Global.player.player_name)
 	
 	if typing_tween and typing_tween.is_running():
+		if not dialogue.can_skip:
+			return
 		var dead_tween = typing_tween
 		typing_tween = null
 		dead_tween.kill()
@@ -180,10 +184,16 @@ func display_next_dialogue() -> void:
 				typing_tween.tween_interval(0.15)
 		typing_tween.tween_callback(func():
 			dialogue_index += 1
-			end_hint.modulate.a = 1.0
-			blink_tween = get_tree().create_tween().set_loops()
-			blink_tween.tween_property(end_hint, "modulate:a", 0.2, 0.4)
-			blink_tween.tween_property(end_hint, "modulate:a", 1.0, 0.4)
+			if dialogue.auto_continue:
+				end_hint.modulate.a = 0.0
+				var next := get_tree().create_tween()
+				next.tween_interval(0.15)
+				next.tween_callback(display_next_dialogue)
+			else:
+				end_hint.modulate.a = 1.0
+				blink_tween = get_tree().create_tween().set_loops()
+				blink_tween.tween_property(end_hint, "modulate:a", 0.2, 0.4)
+				blink_tween.tween_property(end_hint, "modulate:a", 1.0, 0.4)
 		)
 		
 		if dialogue.show_on_left:
@@ -215,6 +225,13 @@ func _finish_dialogue(skip_broadcast: bool = false) -> void:
 	visible = false
 	dialogue_finished.emit()
 func _show_choices(group: DialogueGroup) -> void:
+	if heart_tween and heart_tween.is_running():
+		heart_tween.kill()
+		# 杀 tween 瞬间读当前位置，覆盖追踪器，下一次滑动从这里起跑
+		for item in choice_items:
+			if item.heart.visible:
+				_heart_global_tracker = item.heart.global_position
+				break
 	text_box.clear()
 	choices_active = true
 
@@ -243,8 +260,8 @@ func _show_choices(group: DialogueGroup) -> void:
 			visible_count += 1
 	if visible_count <= 1:
 		choices_first_nav = false
-		_place_heart_on(choice_items[current_choice_index])
 		choice_items[current_choice_index].set_selected(true)
+		_update_heart_position(choice_items[current_choice_index])
 	else:
 		choices_first_nav = true
 
@@ -252,6 +269,8 @@ func _get_marker_center() -> Vector2:
 	return choice_marker.global_position + choice_marker.size / 2.0
 
 func _hide_choices() -> void:
+	if heart_tween and heart_tween.is_running():
+		heart_tween.kill()
 	for item in choice_items:
 		item.visible = false
 		item.set_selected(false)
@@ -278,20 +297,78 @@ func _place_heart_on(item: ChoiceItem) -> void:
 	# Heart 绝对定位到该项文字左侧
 	var hw := item.heart.size.x
 	item.heart.position = Vector2(item.label.position.x - hw - 8.0, item.label.position.y + item.label.size.y / 2.0 - item.heart.size.y / 2.0)
+
+
+
 func _update_heart_position(target: ChoiceItem) -> void:
 	if heart_tween and heart_tween.is_running():
 		heart_tween.kill()
-	if heart_move_duration <= 0.0:
+	
+	var effect := main_dialogue.choice_effect
+	
+	if effect == null:
 		_place_heart_on(target)
-	else:
-		var from_pos := Vector2(target.heart.position)
-		_place_heart_on(target)  # 先算好目标位置
+		_heart_global_tracker = target.heart.global_position
+		return
+	
+	if effect is ChoiceSlideEffect:
+		var slide := effect as ChoiceSlideEffect
+		var dur := slide.duration if slide.duration > 0.0 else 0.01
+		_place_heart_on(target)
 		var to_pos := Vector2(target.heart.position)
-		target.heart.position = from_pos
+		_heart_global_tracker = target.heart.global_position
+		target.heart.position = Vector2(to_pos.x + target.heart.size.x + 8.0, to_pos.y)
 		heart_tween = create_tween()
 		heart_tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
-		heart_tween.tween_property(target.heart, "position", to_pos, heart_move_duration)
+		heart_tween.tween_property(target.heart, "position", to_pos, dur)
+	elif effect is ChoiceSnapEffect:
+		var snap := effect as ChoiceSnapEffect
+		_place_heart_on(target)
+		var to_global := target.heart.global_position
+		# 首次出现无动画
+		if _heart_global_tracker == Vector2.ZERO:
+			_heart_global_tracker = to_global
+			return
+		var from_global := _heart_global_tracker
+		_heart_global_tracker = to_global
+		if from_global == to_global:
+			return
+		# 把 from_global 换算到 target 本地坐标，再 tween
+		var target_base := target.global_position
+		var local_from := from_global - target_base
+		var local_to := to_global - target_base
+		target.heart.position = local_from
+		var dist := (to_global - from_global).length()
+		var dur : float = dist / max(snap.speed, 1.0) if snap.speed > 0.0 else 0.12
+		heart_tween = create_tween()
+		if snap.use_ease:
+			heart_tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+		else:
+			heart_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_LINEAR)
+		if snap.overshoot:
+			var sign := 1 if local_to.x > local_from.x else -1
+			var peak := Vector2(local_to.x + snap.overshoot_amount * sign, local_to.y)
+			heart_tween.tween_property(target.heart, "position", peak, dur * 0.7)
+			heart_tween.tween_property(target.heart, "position", local_to, dur * 0.3)
+		else:
+			heart_tween.tween_property(target.heart, "position", local_to, dur)
+	elif effect is ChoiceWobbleEffect:
+		var wo := effect as ChoiceWobbleEffect
+		_place_heart_on(target)
+		var base_x := target.heart.position.x
+		_heart_global_tracker = target.heart.global_position
+		heart_tween = create_tween()
+		for i in wo.count:
+			var sign := 1 if i % 2 == 0 else -1
+			var amp := wo.magnitude * pow(wo.decay, i)
+			if amp < 0.3:
+				break
+			heart_tween.tween_property(target.heart, "position:x", base_x + amp * sign, wo.speed)
+			heart_tween.tween_property(target.heart, "position:x", base_x, wo.speed)
 func _navigate_direction(direction: Vector2) -> void:
+	var effect := main_dialogue.choice_effect
+	if effect is ChoiceSnapEffect and (effect as ChoiceSnapEffect).block_input and heart_tween and heart_tween.is_running():
+		return
 	var current := choice_items[current_choice_index]
 	var cur_center := current.get_center()
 
@@ -322,22 +399,23 @@ func _navigate_direction(direction: Vector2) -> void:
 		if choices_first_nav:
 			choices_first_nav = false
 			current_choice_index = best_index
-			_place_heart_on(choice_items[current_choice_index])
 			choice_items[current_choice_index].set_selected(true)
+			_update_heart_position(choice_items[current_choice_index])
 		else:
 			var old := choice_items[current_choice_index]
+			_heart_global_tracker = old.heart.global_position
 			old.set_selected(false)
 			current_choice_index = best_index
 			var next_item := choice_items[current_choice_index]
-			_update_heart_position(next_item)
 			next_item.set_selected(true)
+			_update_heart_position(next_item)
 		choice_audio.stream = main_dialogue.choice_switch_sound
 		choice_audio.play()
 	elif choices_first_nav:
 		# 方向无候选但红心未出 → 直接在当前项上显示
 		choices_first_nav = false
-		_place_heart_on(choice_items[current_choice_index])
 		choice_items[current_choice_index].set_selected(true)
+		_update_heart_position(choice_items[current_choice_index])
 		choice_audio.stream = main_dialogue.choice_switch_sound
 		choice_audio.play()
 
