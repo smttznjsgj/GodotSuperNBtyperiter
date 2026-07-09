@@ -21,6 +21,7 @@ extends Control
 	$container/Choicecontainer/Item3
 ]
 @onready var choice_marker: Control = $container/Choicecontainer/Marker
+@onready var visual_marker: Control = $container/Choicecontainer/visualmarker
 
 var choices_active: bool = false
 var current_choice_index: int = 0
@@ -234,10 +235,10 @@ func _show_choices(group: DialogueGroup) -> void:
 				break
 	text_box.clear()
 	choices_active = true
-
 	for i in choice_items.size():
 		if i < group.choices.size() and group.choices[i] != "":
 			choice_items[i].set_text(group.choices[i])
+			choice_items[i].set_colors(Color.WHITE, group.choice_selected_color)
 			choice_items[i].visible = true
 		else:
 			choice_items[i].visible = false
@@ -264,6 +265,12 @@ func _show_choices(group: DialogueGroup) -> void:
 		_update_heart_position(choice_items[current_choice_index])
 	else:
 		choices_first_nav = true
+		var effect := group.choice_effect
+		if effect is ChoiceSnapEffect:
+			_heart_global_tracker = visual_marker.global_position + visual_marker.size / 2.0
+			_place_heart_on(choice_items[current_choice_index])
+			choice_items[current_choice_index].heart.visible = true
+			choice_items[current_choice_index].heart.position = _heart_global_tracker - choice_items[current_choice_index].global_position
 
 func _get_marker_center() -> Vector2:
 	return choice_marker.global_position + choice_marker.size / 2.0
@@ -398,6 +405,7 @@ func _navigate_direction(direction: Vector2) -> void:
 	if best_index != -1:
 		if choices_first_nav:
 			choices_first_nav = false
+			choice_items[current_choice_index].set_selected(false)
 			current_choice_index = best_index
 			choice_items[current_choice_index].set_selected(true)
 			_update_heart_position(choice_items[current_choice_index])

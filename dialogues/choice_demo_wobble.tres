@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://dvtsooob1s8jk"]
+
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="1_dialogue"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="2_group"]
+[ext_resource type="Script" uid="uid://o5w5t5g5q8oj" path="res://dialogue_script/effects_script/Choice_effects/choice_wobbel_effect.gd" id="3_wobble"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_o0e4p"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="6_squeak"]
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="7_select"]
+[ext_resource type="Texture2D" uid="uid://cylf12uts43rn" path="res://素材/spr_flowey_0-Sheet.png" id="8_flowey"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="9_font"]
+
+[sub_resource type="Resource" id="Wobble_Effect"]
+script = ExtResource("3_wobble")
+count = 5
+metadata/_custom_type_script = "uid://o5w5t5g5q8oj"
+
+[sub_resource type="Resource" id="Dia_Wobble_1"]
+script = ExtResource("1_dialogue")
+content = "最后是[rainbow freq=0.5 sat=15 val=20]果冻摇晃[/rainbow]！
+红心贴上去之后左右晃几下，幅度会衰减。
+就像被摇晃了一下。[pulse freq=3 ease=-2]懂吧？[/pulse]"
+avatar = ExtResource("8_flowey")
+character_name = "小花"
+show_on_left = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Dia_Wobble_2"]
+script = ExtResource("1_dialogue")
+content = "三个选项随便点，感受那个摇晃。"
+avatar = ExtResource("8_flowey")
+character_name = "小花"
+show_on_left = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("2_group")
+dialogue_list = Array[ExtResource("1_dialogue")]([SubResource("Dia_Wobble_1"), SubResource("Dia_Wobble_2")])
+id = "wobble"
+next_id = "end"
+choices = Array[String](["晃我！", "也晃我！", "为什么不晃我？？", ""])
+choice_next_ids = Array[String](["end", "end", "end", ""])
+choice_effect = SubResource("Wobble_Effect")
+metadata/_custom_type_script = "uid://br0sgnpurqem5"

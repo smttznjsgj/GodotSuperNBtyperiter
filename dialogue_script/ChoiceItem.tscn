@@ -6,6 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_ccnoi"]
 font = ExtResource("3_dau6x")
+font_size = 17
 
 [node name="ChoiceItem" type="Control" unique_id=175760902]
 layout_mode = 3
@@ -21,17 +22,17 @@ script = ExtResource("1_xwfxn")
 self_modulate = Color(1, 0.023529412, 0, 1)
 texture_filter = 1
 layout_mode = 1
-offset_left = 9.0
+offset_left = 13.0
 offset_top = 3.0
-offset_right = 24.0
+offset_right = 28.0
 offset_bottom = 18.0
 texture = ExtResource("2_dau6x")
 
 [node name="Text" type="Label" parent="." unique_id=1560186134]
 layout_mode = 0
-offset_left = 23.0
+offset_left = 25.0
 offset_top = -1.0
-offset_right = 66.0
+offset_right = 68.0
 offset_bottom = 22.0
 text = "111"
 label_settings = SubResource("LabelSettings_ccnoi")

@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://b38mdkiao6332"]
+
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="1_dialogue"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="2_group"]
+[ext_resource type="Script" uid="uid://dx0abnirqjt1b" path="res://dialogue_script/effects_script/Choice_effects/choice_slide_effect.gd" id="3_slide"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_dr3ce"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="6_squeak"]
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="7_select"]
+[ext_resource type="Texture2D" uid="uid://cylf12uts43rn" path="res://素材/spr_flowey_0-Sheet.png" id="8_flowey"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="9_font"]
+
+[sub_resource type="Resource" id="Slide_Effect"]
+script = ExtResource("3_slide")
+duration = 0.1
+metadata/_custom_type_script = "uid://dx0abnirqjt1b"
+
+[sub_resource type="Resource" id="Dia_Intro_1"]
+script = ExtResource("1_dialogue")
+content = "嘿！是你啊！
+听说你搞了一套[shake rate=10 level=3]选项系统[/shake]？
+[wave amp=20 freq=2]让我来检验一下！！[/wave]"
+avatar = ExtResource("8_flowey")
+character_name = "小花"
+show_on_left = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Dia_Intro_2"]
+script = ExtResource("1_dialogue")
+content = "现在你看到了两个选项。
+红心是[color=#ffaa00]从文字左边滑进来[/color]的——这就是[color=#ff4444]Slide效果[/color]！
+[tornado radius=4 freq=2]果冻弹入！[/tornado]
+选一个，我们继续。"
+avatar = ExtResource("8_flowey")
+character_name = "小花"
+show_on_left = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("2_group")
+dialogue_list = Array[ExtResource("1_dialogue")]([SubResource("Dia_Intro_1"), SubResource("Dia_Intro_2")])
+id = "intro"
+next_id = "snap_free"
+choices = Array[String](["挺顺滑的！", "还行吧", "", ""])
+choice_next_ids = Array[String](["snap_free", "snap_free", "", ""])
+choice_effect = SubResource("Slide_Effect")
+metadata/_custom_type_script = "uid://br0sgnpurqem5"

@@ -14,3 +14,4 @@ class_name DialogueGroup
 @export var choice_effect: ChoiceEffectData
 @export var choice_switch_sound: AudioStream = preload("res://素材/声音/snd_squeak.wav")
 @export var choice_confirm_sound: AudioStream = preload("res://素材/声音/snd_select.wav")
+@export var choice_selected_color: Color = Color(1.0, 0.85, 0.0)

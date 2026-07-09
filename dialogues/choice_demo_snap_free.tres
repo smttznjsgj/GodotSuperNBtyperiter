@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://bi4djagptplo2"]
+
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="1_dialogue"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="2_group"]
+[ext_resource type="Script" uid="uid://bsko0xhx61xck" path="res://dialogue_script/effects_script/Choice_effects/choice_snap_effect.gd" id="3_snap"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_fve0s"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="6_squeak"]
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="7_select"]
+[ext_resource type="Texture2D" uid="uid://cylf12uts43rn" path="res://素材/spr_flowey_0-Sheet.png" id="8_flowey"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="9_font"]
+
+[sub_resource type="Resource" id="Snap_Free"]
+script = ExtResource("3_snap")
+speed = 350.0
+metadata/_custom_type_script = "uid://bsko0xhx61xck"
+
+[sub_resource type="Resource" id="Dia_Snap_1"]
+script = ExtResource("1_dialogue")
+content = "接来下是[color=#44aaff]Snap滑动传送[/color]。
+[shake rate=15 level=4]看仔细！[/shake]
+红心会在选项之间[rainbow freq=0.4 sat=10 val=20]飞过去[/rainbow]。
+按方向键试试！"
+avatar = ExtResource("8_flowey")
+character_name = "小花"
+show_on_left = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Dia_Snap_2"]
+script = ExtResource("1_dialogue")
+content = "[center]←  →  ↑  ↓[/center]
+来回按！快速连按[color=#44aaff]无缝衔接[/color]。
+远近一样快——速度恒定的。
+按够了吗？随便选一个确认。"
+avatar = ExtResource("8_flowey")
+character_name = "小花"
+show_on_left = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("2_group")
+dialogue_list = Array[ExtResource("1_dialogue")]([SubResource("Dia_Snap_1"), SubResource("Dia_Snap_2")])
+id = "snap_free"
+next_id = "snap_blocked"
+choices = Array[String](["左边", "右边", "上边", "底下"])
+choice_next_ids = Array[String](["snap_blocked", "snap_blocked", "snap_blocked", "snap_blocked"])
+choice_effect = SubResource("Snap_Free")
+metadata/_custom_type_script = "uid://br0sgnpurqem5"

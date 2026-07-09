@@ -6,7 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://dqku6dkv51lsp" path="res://dialogue_script/ChoiceItem.tscn" id="4_lgx41"]
 [ext_resource type="Script" uid="uid://c1qseip32cels" path="res://dialogue_script/effects_script/effect_ghost.gd" id="4_yjy76"]
 
+[sub_resource type="Theme" id="Theme_mekwl"]
+
 [sub_resource type="Theme" id="Theme_yjy76"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbtfb"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_mekwl"]
 script = ExtResource("4_yjy76")
@@ -53,6 +62,7 @@ anchor_bottom = 1.0
 offset_top = -161.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_mekwl")
 
 [node name="leftavatar" type="TextureRect" parent="container/DialogueBox" unique_id=1921320161]
 modulate = Color(1, 1, 0, 1)
@@ -65,6 +75,7 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_yjy76")
+theme_override_styles/panel = SubResource("StyleBoxFlat_cbtfb")
 
 [node name="MarginContainer" type="MarginContainer" parent="container/DialogueBox/Panel" unique_id=1189553909]
 layout_mode = 1
@@ -110,6 +121,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -21.0
+offset_right = 9.0
+offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -173,6 +188,13 @@ offset_right = -56.0
 offset_bottom = -1.0159912
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="visualmarker" type="Control" parent="container/Choicecontainer" unique_id=1093582380]
+anchors_preset = 0
+offset_left = 433.0
+offset_top = 558.0
+offset_right = 473.0
+offset_bottom = 598.0
 
 [node name="TypingAudio" type="AudioStreamPlayer" parent="." unique_id=397426411]
 

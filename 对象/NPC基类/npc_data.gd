@@ -29,6 +29,7 @@ func _on_dialogue_finished() -> void:
 func _on_dialogue_continue() -> void:
 	var group := _find_group(current_group_id)
 	if group:
+		DialogueUI.dialogue_continue.connect(_on_dialogue_continue, CONNECT_ONE_SHOT)
 		DialogueUI.start_dialogue(group)
 #func _on_dialogue_finished() -> void:
 	#var finished := _find_group(current_group_id)
@@ -37,6 +38,8 @@ func _on_dialogue_continue() -> void:
 		
 func _find_group(target_id: String) -> DialogueGroup:
 	for g in dialogue_groups:
+		if g == null:
+			continue
 		if g.id == target_id:
 			return g
 	return null

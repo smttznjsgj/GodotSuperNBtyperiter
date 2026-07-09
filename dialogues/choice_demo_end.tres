@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://cei2bhdl8mw1y"]
+
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="1_dialogue"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="2_group"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="5_u14cf"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="6_squeak"]
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="7_select"]
+[ext_resource type="Texture2D" uid="uid://cylf12uts43rn" path="res://素材/spr_flowey_0-Sheet.png" id="8_flowey"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="9_font"]
+
+[sub_resource type="Resource" id="Dia_End_1"]
+script = ExtResource("1_dialogue")
+content = "当然不选效果也行——[color=#888888]瞬间贴上去[/color]。干净利落。
+Sans那家伙肯定爱用。省特效。"
+avatar = ExtResource("8_flowey")
+character_name = "小花"
+show_on_left = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Dia_End_2"]
+script = ExtResource("1_dialogue")
+content = "好了总结——
+[color=#44aaff]无效果[/color]：瞬间，干净
+[color=#44aaff]Slide[/color]：果冻弹入
+[color=#44aaff]Snap[/color]：滑动传送（速度/缓动/惯性/锁定全可调）
+[color=#44aaff]Wobble[/color]：果冻摇晃
+
+[color=#888888]* 空字符串自动隐藏，2/3/4选项自由布局[/color]
+[color=#888888]* 四方向导航 + 空白确认惩罚[/color]
+
+好了介绍完了。祝你游戏开发顺利！
+[color=#888888]……那不会真是个杀人游戏吧？[/color]"
+avatar = ExtResource("8_flowey")
+character_name = "小花"
+show_on_left = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("2_group")
+dialogue_list = Array[ExtResource("1_dialogue")]([SubResource("Dia_End_1"), SubResource("Dia_End_2")])
+id = "end"
+choices = Array[String](["才不会呢！（心虚）", "……也许吧", "", ""])
+choice_next_ids = Array[String](["endd", "endd", "", ""])
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
