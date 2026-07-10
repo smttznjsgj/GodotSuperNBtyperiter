@@ -22,7 +22,6 @@ content = "接来下是[color=#44aaff]Snap滑动传送[/color]。
 按方向键试试！"
 avatar = ExtResource("8_flowey")
 character_name = "小花"
-show_on_left = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Dia_Snap_2"]
@@ -33,7 +32,6 @@ content = "[center]←  →  ↑  ↓[/center]
 按够了吗？随便选一个确认。"
 avatar = ExtResource("8_flowey")
 character_name = "小花"
-show_on_left = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [resource]

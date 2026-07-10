@@ -11,6 +11,8 @@ extends Control
 
 @onready var end_hint: Label = %end_hint
 @onready var container: Control = $container
+@onready var avatar_left_panel: Panel = $container/DialogueBox/Mainpanel/HBoxContainer/avatar_left_panel
+@onready var avatar_right_panel: Panel = $container/DialogueBox/Mainpanel/HBoxContainer/avatar_right_panel
 
 @onready var shake_audio: AudioStreamPlayer = $ShakeAudio
 @onready var choice_audio: AudioStreamPlayer = $ChoiceAudio
@@ -197,13 +199,10 @@ func display_next_dialogue() -> void:
 				blink_tween.tween_property(end_hint, "modulate:a", 1.0, 0.4)
 		)
 		
-		if dialogue.show_on_left:
-			left_avatar.texture = dialogue.avatar
-			right_avatar.texture = null
-		else:
-			right_avatar.texture = dialogue.avatar
-			left_avatar.texture = null
-			
+		left_avatar.texture = dialogue.avatar
+		avatar_left_panel.custom_minimum_size.x = 200 if dialogue.avatar else 0
+		right_avatar.texture = dialogue.avatar_right
+		avatar_right_panel.custom_minimum_size.x = 200 if dialogue.avatar_right else 0
 	#
 #func _finish_dialogue() -> void:
 	#persistent_effect_running = false
@@ -226,6 +225,9 @@ func _finish_dialogue(skip_broadcast: bool = false) -> void:
 	visible = false
 	dialogue_finished.emit()
 func _show_choices(group: DialogueGroup) -> void:
+	left_avatar.texture = null
+	right_avatar.texture = null
+	character_name_text.text = ""
 	if heart_tween and heart_tween.is_running():
 		heart_tween.kill()
 		# 杀 tween 瞬间读当前位置，覆盖追踪器，下一次滑动从这里起跑

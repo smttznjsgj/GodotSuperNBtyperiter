@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://440xn70afvhh"]
+
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="1_omqtx"]
+[ext_resource type="Texture2D" uid="uid://blb3787tbjwid" path="res://素材/toriel_face/Overworld/spr_chairiel_1.png" id="2_jlepr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
+size = Vector2(32.273064, 21.083237)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7mpe"]
+size = Vector2(55, 53)
+
+[node name="坐着的羊妈" type="StaticBody2D" unique_id=666820554]
+script = ExtResource("1_omqtx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979832529]
+texture_filter = 1
+texture = ExtResource("2_jlepr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=43550759]
+position = Vector2(3.9999998, 15)
+scale = Vector2(1.1154813, 0.6640347)
+shape = SubResource("RectangleShape2D_trlyu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1872116843]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1652434430]
+position = Vector2(2.5, -3.5)
+shape = SubResource("RectangleShape2D_x7mpe")

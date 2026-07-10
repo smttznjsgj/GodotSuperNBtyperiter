@@ -5,7 +5,7 @@ class_name ChoiceItem
 @onready var label: Label = $Text
 
 var normal_color: Color = Color.WHITE
-var selected_color: Color = Color(1.0, 0.85, 0.0)
+var selected_color: Color = Color(1.0, 1.0, 0.0, 1.0)
 
 func set_text(t: String) -> void:
 	label.text = t

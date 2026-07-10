@@ -21,7 +21,6 @@ content = "嘿！是你啊！
 [wave amp=20 freq=2]让我来检验一下！！[/wave]"
 avatar = ExtResource("8_flowey")
 character_name = "小花"
-show_on_left = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Dia_Intro_2"]
@@ -32,7 +31,6 @@ content = "现在你看到了两个选项。
 选一个，我们继续。"
 avatar = ExtResource("8_flowey")
 character_name = "小花"
-show_on_left = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [resource]

@@ -2,14 +2,14 @@ extends Resource
 class_name Dialogue
 
 
-@export_multiline var content : String
+@export_multiline var content : String = "* "
 @export var avatar : Texture
 @export var typing_sound : AudioStream
 
 
 @export_group("Normal")
 @export var character_name : String
-@export var show_on_left : bool
+@export var avatar_right : Texture
 @export_group("Advanced")
 @export var can_skip: bool = true
 @export var auto_continue: bool = false

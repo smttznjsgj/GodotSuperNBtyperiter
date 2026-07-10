@@ -14,7 +14,6 @@ content = "当然不选效果也行——[color=#888888]瞬间贴上去[/color]�
 Sans那家伙肯定爱用。省特效。"
 avatar = ExtResource("8_flowey")
 character_name = "小花"
-show_on_left = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Dia_End_2"]
@@ -32,7 +31,6 @@ content = "好了总结——
 [color=#888888]……那不会真是个杀人游戏吧？[/color]"
 avatar = ExtResource("8_flowey")
 character_name = "小花"
-show_on_left = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [resource]

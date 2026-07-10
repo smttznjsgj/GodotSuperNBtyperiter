@@ -21,7 +21,6 @@ content = "最后是[rainbow freq=0.5 sat=15 val=20]果冻摇晃[/rainbow]！
 就像被摇晃了一下。[pulse freq=3 ease=-2]懂吧？[/pulse]"
 avatar = ExtResource("8_flowey")
 character_name = "小花"
-show_on_left = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Dia_Wobble_2"]
@@ -29,7 +28,6 @@ script = ExtResource("1_dialogue")
 content = "三个选项随便点，感受那个摇晃。"
 avatar = ExtResource("8_flowey")
 character_name = "小花"
-show_on_left = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [resource]

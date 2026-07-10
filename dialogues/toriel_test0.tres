@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://dogi08oig5htp"]
+
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="1_c3v7s"]
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="1_dialogue"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="2_group"]
+[ext_resource type="Script" uid="uid://bsko0xhx61xck" path="res://dialogue_script/effects_script/Choice_effects/choice_snap_effect.gd" id="3_snap"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="3_w80y6"]
+[ext_resource type="Texture2D" uid="uid://be8j8ey47js8k" path="res://素材/toriel_face/spr_face_torielblink_0.png" id="4_blink"]
+[ext_resource type="Texture2D" uid="uid://cisqqufc4lsjj" path="res://素材/toriel_face/spr_face_torieltalk_1.png" id="5_talk"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_1inak"]
+[ext_resource type="Texture2D" uid="uid://dsp6j427yvoja" path="res://素材/toriel_face/sprite65_0.png" id="6_happy"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="7_r5u8y"]
+
+[sub_resource type="Resource" id="Snap_T1"]
+script = ExtResource("3_snap")
+speed = 350.0
+metadata/_custom_type_script = "uid://bsko0xhx61xck"
+
+[sub_resource type="Resource" id="Dia_T1_1"]
+script = ExtResource("1_dialogue")
+content = "哦，你好！{name}！
+刚刚没注意到你。"
+avatar = ExtResource("4_blink")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Dia_T1_2"]
+script = ExtResource("1_dialogue")
+content = "不好意思，我看书
+看得太入迷了。"
+avatar = ExtResource("5_talk")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Dia_T1_3"]
+script = ExtResource("1_dialogue")
+content = "你饿了吗？还是要
+出门和朋友去玩？"
+avatar = ExtResource("6_happy")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("2_group")
+dialogue_list = Array[ExtResource("1_dialogue")]([SubResource("Dia_T1_1"), SubResource("Dia_T1_2"), SubResource("Dia_T1_3")])
+id = "T1"
+choices = Array[String](["不是很饿", "有点饿了", "要出门玩", "怎么离开Ruins?"])
+choice_next_ids = Array[String](["T2", "T3", "T4", "T6_leave"])
+choice_effect = SubResource("Snap_T1")
+metadata/_custom_type_script = "uid://br0sgnpurqem5"

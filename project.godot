@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="【控制符代办】手搓自研打字机6.24日选项美化已完成，"
+config/name="动画代办，主世界旁白叙事代办"
 run/main_scene="uid://cjnsuqg5xl3uj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -25,8 +25,8 @@ Global="*uid://ckh6730jdqbqm"
 
 [display]
 
-window/size/viewport_width=960
-window/size/viewport_height=640
+window/size/viewport_width=640
+window/size/viewport_height=480
 window/size/borderless=true
 window/size/always_on_top=true
 window/stretch/mode="canvas_items"

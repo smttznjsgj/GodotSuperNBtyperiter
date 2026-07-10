@@ -1,0 +1,173 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://c5xvo3xhb0l3s"]
+
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="1_me6kt"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="2_00vre"]
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="3_ks846"]
+[ext_resource type="Texture2D" uid="uid://d301cwng3scum" path="res://素材/toriel_face/spr_face_torieltalkside_0.png" id="4_k85pj"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="5_bigwj"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="6_re0gi"]
+[ext_resource type="Texture2D" uid="uid://d4hrkqm2sibgx" path="res://素材/toriel_face/spr_face_torielscared_0.png" id="7_lo6b1"]
+[ext_resource type="Texture2D" uid="uid://cisqqufc4lsjj" path="res://素材/toriel_face/spr_face_torieltalk_1.png" id="8_0mb0k"]
+[ext_resource type="Texture2D" uid="uid://7q3navp3blvu" path="res://素材/toriel_face/spr_face_torielhappy_right_0.png" id="9_r7k6j"]
+[ext_resource type="Texture2D" uid="uid://by3pwt4mv25tx" path="res://素材/toriel_face/spr_face_torielhappy_left_0.png" id="10_sb7kk"]
+[ext_resource type="Texture2D" uid="uid://dbjh5mr7i5e6q" path="res://素材/toriel_face/spr_face_torielblinkside_0.png" id="11_5mwld"]
+[ext_resource type="Texture2D" uid="uid://m7omhx1a1aos" path="res://素材/toriel_face/spr_face_torielencourage_0.png" id="12_cyc0f"]
+[ext_resource type="Texture2D" uid="uid://csbbqa6tu2w45" path="res://素材/toriel_face/spr_face_torielencourage_1.png" id="13_gwr2v"]
+[ext_resource type="Texture2D" uid="uid://c34wnug8m1xiq" path="res://素材/toriel_face/spr_face_torielcoldblink_0.png" id="14_hjom4"]
+[ext_resource type="Texture2D" uid="uid://btl4ph3dw2e4x" path="res://素材/toriel_face/spr_face_torielmadblink_0.png" id="15_b5yb7"]
+[ext_resource type="Texture2D" uid="uid://c1dfa5wxgf8e2" path="res://素材/toriel_face/spr_face_torielcold_1.png" id="16_uybhu"]
+[ext_resource type="Texture2D" uid="uid://dqmxu66glncts" path="res://素材/toriel_face/spr_face_torielcold_0.png" id="17_ibblj"]
+[ext_resource type="Texture2D" uid="uid://be8j8ey47js8k" path="res://素材/toriel_face/spr_face_torielblink_0.png" id="18_02xjb"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="19_xp3sk"]
+
+[sub_resource type="Resource" id="Resource_njmod"]
+script = ExtResource("3_ks846")
+content = "* 离开Ruins？？"
+avatar = ExtResource("4_k85pj")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_8rns0"]
+script = ExtResource("3_ks846")
+content = "*但是，我的孩子，
+你最好还是不要想离开遗迹这件事。行吗？"
+avatar = ExtResource("7_lo6b1")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_r5l33"]
+script = ExtResource("3_ks846")
+content = "*就在这里快快乐乐的。"
+avatar = ExtResource("8_0mb0k")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_0rh08"]
+script = ExtResource("3_ks846")
+content = "*我可以给你做好吃的派，
+念有趣的故事。"
+avatar = ExtResource("8_0mb0k")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_gkbvp"]
+script = ExtResource("3_ks846")
+content = "*你还能在遗迹的浅水塘捉青蛙玩！"
+avatar = ExtResource("9_r7k6j")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_yhq2q"]
+script = ExtResource("3_ks846")
+content = "*......"
+avatar = ExtResource("10_sb7kk")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_7wu5a"]
+script = ExtResource("3_ks846")
+content = "*......"
+avatar = ExtResource("11_5mwld")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_cvw5p"]
+script = ExtResource("3_ks846")
+content = "*我知道你很想离开 Ruins。"
+avatar = ExtResource("12_cyc0f")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_dw65b"]
+script = ExtResource("3_ks846")
+content = "*但是，亲爱的..."
+avatar = ExtResource("13_gwr2v")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_3csxk"]
+script = ExtResource("3_ks846")
+content = "*我真的不能让你离开。"
+avatar = ExtResource("14_hjom4")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_tuidn"]
+script = ExtResource("3_ks846")
+content = "*虽然这对一个孩子来说有些残酷。"
+avatar = ExtResource("12_cyc0f")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_xjt4s"]
+script = ExtResource("3_ks846")
+content = "*但是，我希望你也能理解。"
+avatar = ExtResource("13_gwr2v")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_l0yeh"]
+script = ExtResource("3_ks846")
+content = "*如果你离开了Ruins，我就不能在保护你，我的孩子。"
+avatar = ExtResource("12_cyc0f")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_wi0h3"]
+script = ExtResource("3_ks846")
+content = "*你不知道，如果你离开了Ruins，
+外面的怪物会对你做出什么事情。"
+avatar = ExtResource("14_hjom4")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_uhbhb"]
+script = ExtResource("3_ks846")
+content = "*..."
+avatar = ExtResource("15_b5yb7")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_8qf8r"]
+script = ExtResource("3_ks846")
+content = "*......"
+avatar = ExtResource("14_hjom4")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_7wo3u"]
+script = ExtResource("3_ks846")
+content = "*别这样看着我，别用这种眼神..."
+avatar = ExtResource("16_uybhu")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_5gg7f"]
+script = ExtResource("3_ks846")
+content = "*......"
+avatar = ExtResource("17_ibblj")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_7gxjk"]
+script = ExtResource("3_ks846")
+content = "*我的孩子。我很抱歉..."
+avatar = ExtResource("12_cyc0f")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_jh71f"]
+script = ExtResource("3_ks846")
+content = "*我很抱歉，要让你在这里长大。"
+avatar = ExtResource("13_gwr2v")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_d6rpb"]
+script = ExtResource("3_ks846")
+content = "*你是对的...因为你在这里没有朋友，
+也不能得到好的教育。
+"
+avatar = ExtResource("11_5mwld")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_p3uqr"]
+script = ExtResource("3_ks846")
+content = "*如果你要离开，
+我会给你准备你路上要穿衣服，鞋子，
+还有要带的食物，以及其他东西。"
+avatar = ExtResource("18_02xjb")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_du300"]
+script = ExtResource("3_ks846")
+content = "*但是，一旦离开Ruins，
+就不要再回来了。"
+avatar = ExtResource("4_k85pj")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("19_xp3sk")
+dialogue_list = Array[ExtResource("3_ks846")]([SubResource("Resource_njmod"), SubResource("Resource_8rns0"), SubResource("Resource_r5l33"), SubResource("Resource_0rh08"), SubResource("Resource_gkbvp"), SubResource("Resource_yhq2q"), SubResource("Resource_7wu5a"), SubResource("Resource_cvw5p"), SubResource("Resource_dw65b"), SubResource("Resource_3csxk"), SubResource("Resource_tuidn"), SubResource("Resource_xjt4s"), SubResource("Resource_l0yeh"), SubResource("Resource_wi0h3"), SubResource("Resource_uhbhb"), SubResource("Resource_8qf8r"), SubResource("Resource_7wo3u"), SubResource("Resource_5gg7f"), SubResource("Resource_7gxjk"), SubResource("Resource_jh71f"), SubResource("Resource_d6rpb"), SubResource("Resource_p3uqr"), SubResource("Resource_du300")])
+id = "end"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"

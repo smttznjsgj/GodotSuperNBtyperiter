@@ -2,7 +2,7 @@ extends ChoiceEffectData
 class_name ChoiceSnapEffect
 
 ## 滑动速度，单位：像素/秒。距离越远耗时越长，保持匀速
-@export var speed: float = 400.0
+@export var speed: float = 2000.0
 ## 关闭 = 匀速直线，开启 = EASE_OUT 缓动，起步快收脚柔
 @export var use_ease: bool = true
 ## 关闭 = 精确停在目标位置，开启 = 冲过头再弹回来（惯性）

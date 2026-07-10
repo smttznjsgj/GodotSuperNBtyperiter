@@ -26,7 +26,6 @@ content = "现在[color=#ff4444]block_input = true[/color]。
 主角已经没力气了。只能眼睁睁看着。"
 avatar = ExtResource("8_flowey")
 character_name = "小花"
-show_on_left = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Dia_Blocked_2"]
@@ -35,7 +34,6 @@ content = "按一下。等一等。再按。
 它慢慢挪过去。你什么都做不了。"
 avatar = ExtResource("8_flowey")
 character_name = "小花"
-show_on_left = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [resource]
