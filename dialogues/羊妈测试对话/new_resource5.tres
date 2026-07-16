@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://ddotr6d53eo5j"]
+
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="1_3lids"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="2_2g2kr"]
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="3_frx3g"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="4_oxwyg"]
+
+[resource]
+script = ExtResource("4_oxwyg")
+id = "沉默"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"

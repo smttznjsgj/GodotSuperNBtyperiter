@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://o7hhieffmau4"]
 
-[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="1_5pc0t"]
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_5pc0t"]
 [ext_resource type="Texture2D" uid="uid://cc86i26y1ivtk" path="res://icon.svg" id="2_5pc0t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]

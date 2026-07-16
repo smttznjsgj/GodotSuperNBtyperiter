@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cevidcc5uhh41"]
+[gd_scene format=3 uid="uid://dgab3rq0ja8ng"]
 
-[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="1_geu2s"]
-[ext_resource type="Texture2D" uid="uid://cc86i26y1ivtk" path="res://icon.svg" id="2_xt6xe"]
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_hqkfd"]
+[ext_resource type="Texture2D" uid="uid://cylf12uts43rn" path="res://素材/spr_flowey_0-Sheet.png" id="2_puhg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
 size = Vector2(26.894222, 45.17836)
@@ -9,14 +9,14 @@ size = Vector2(26.894222, 45.17836)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7mpe"]
 size = Vector2(24, 16)
 
-[node name="高级对话效果" type="StaticBody2D" unique_id=666820554]
-script = ExtResource("1_geu2s")
+[node name="选项系统的完整演示" type="StaticBody2D" unique_id=666820554]
+script = ExtResource("1_hqkfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979832529]
 texture_filter = 1
-position = Vector2(2.3841858e-07, 2.3841858e-07)
-scale = Vector2(0.23437501, 0.23437501)
-texture = ExtResource("2_xt6xe")
+position = Vector2(-1.9073486e-06, -2.3841858e-07)
+scale = Vector2(0.52173907, 0.6956521)
+texture = ExtResource("2_puhg2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=43550759]
 position = Vector2(0, -2.3841858e-07)

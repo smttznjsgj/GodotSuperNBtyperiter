@@ -1,26 +1,30 @@
-[gd_scene format=3 uid="uid://cfbimc6dmf6am"]
+[gd_scene format=3 uid="uid://cevidcc5uhh41"]
 
-[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="1_ki11f"]
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_geu2s"]
+[ext_resource type="Texture2D" uid="uid://cc86i26y1ivtk" path="res://icon.svg" id="2_xt6xe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
 size = Vector2(26.894222, 45.17836)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7mpe"]
-size = Vector2(24, 16)
+size = Vector2(38, 39)
 
-[node name="NPC" type="StaticBody2D" unique_id=666820554]
-script = ExtResource("1_ki11f")
+[node name="高级对话效果" type="StaticBody2D" unique_id=666820554]
+script = ExtResource("1_geu2s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979832529]
 texture_filter = 1
-scale = Vector2(0.15, 0.15)
+position = Vector2(2.3841858e-07, 2.3841858e-07)
+scale = Vector2(0.23437501, 0.23437501)
+texture = ExtResource("2_xt6xe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=43550759]
-position = Vector2(0, -2.3841858e-07)
 scale = Vector2(1.1154813, 0.6640347)
 shape = SubResource("RectangleShape2D_trlyu")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1872116843]
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1652434430]
 shape = SubResource("RectangleShape2D_x7mpe")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bl4gtfhx4c56s"]
+
+[ext_resource type="Script" uid="uid://c46428goyyydi" path="res://对象/触发对话的基类/区域监测zone/zone_trigger_data.gd" id="1_2yyew"]
+[ext_resource type="Texture2D" uid="uid://dc5nbd62vimol" path="res://素材/unnamed_3510.png" id="2_ughje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acenc"]
+size = Vector2(53, 34)
+
+[node name="Node2D" type="Area2D" unique_id=1449521623]
+script = ExtResource("1_2yyew")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=429236563]
+texture_filter = 1
+texture = ExtResource("2_ughje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1262930738]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_acenc")

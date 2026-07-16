@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://cwh5ouv1e1nok"]
+
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="1_ykt2x"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="2_ro4pt"]
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="3_ar7xo"]
+[ext_resource type="Texture2D" uid="uid://be8j8ey47js8k" path="res://素材/toriel_face/spr_face_torielblink_0.png" id="4_p20nr"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="5_4tj2h"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="6_fbhjn"]
+[ext_resource type="Texture2D" uid="uid://dqufp2p7eyri5" path="res://素材/toriel_face/spr_face_toriel_laughleft_0.png" id="7_68b13"]
+[ext_resource type="Texture2D" uid="uid://by3pwt4mv25tx" path="res://素材/toriel_face/spr_face_torielhappy_left_0.png" id="8_dng26"]
+[ext_resource type="Texture2D" uid="uid://d301cwng3scum" path="res://素材/toriel_face/spr_face_torieltalkside_0.png" id="9_dqsja"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="10_2c3hc"]
+
+[sub_resource type="Resource" id="Resource_kua0a"]
+script = ExtResource("3_ar7xo")
+content = "* 哦，你要出门的话。"
+avatar = ExtResource("4_p20nr")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_1heip"]
+script = ExtResource("3_ar7xo")
+content = "* 冰箱里还有半个奶油糖派，
+可以带在身上。"
+avatar = ExtResource("7_68b13")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_713ll"]
+script = ExtResource("3_ar7xo")
+content = "* 玩饿了的话方便吃！"
+avatar = ExtResource("8_dng26")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_d4ipb"]
+script = ExtResource("3_ar7xo")
+content = "* ..."
+avatar = ExtResource("8_dng26")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_s1yav"]
+script = ExtResource("3_ar7xo")
+content = "* 还有什么事吗？"
+avatar = ExtResource("9_dqsja")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("10_2c3hc")
+dialogue_list = Array[ExtResource("3_ar7xo")]([SubResource("Resource_kua0a"), SubResource("Resource_1heip"), SubResource("Resource_713ll"), SubResource("Resource_d4ipb"), SubResource("Resource_s1yav")])
+id = "出门"
+choices = Array[String](["没事了", "如何离开Ruins"])
+choice_next_ids = Array[String](["end", "end1"])
+metadata/_custom_type_script = "uid://br0sgnpurqem5"

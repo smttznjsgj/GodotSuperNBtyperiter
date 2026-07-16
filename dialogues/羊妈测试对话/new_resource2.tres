@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://buevr6rucgrt7"]
+
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="1_fsa7g"]
+[ext_resource type="Script" uid="uid://bsko0xhx61xck" path="res://dialogue_script/effects_script/Choice_effects/choice_snap_effect.gd" id="2_m67hw"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="3_g0yem"]
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="4_ct1yi"]
+[ext_resource type="Texture2D" uid="uid://cisqqufc4lsjj" path="res://素材/toriel_face/spr_face_torieltalk_1.png" id="5_2ul6c"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_b74f4"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="7_7awk8"]
+[ext_resource type="Texture2D" uid="uid://be8j8ey47js8k" path="res://素材/toriel_face/spr_face_torielblink_0.png" id="8_wupl0"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="9_blhgw"]
+
+[sub_resource type="Resource" id="Resource_rbhwe"]
+script = ExtResource("2_m67hw")
+metadata/_custom_type_script = "uid://bsko0xhx61xck"
+
+[sub_resource type="Resource" id="Resource_00iok"]
+script = ExtResource("4_ct1yi")
+content = "*如果你饿了的话，
+冰箱里面还有午餐剩下的半个奶油派。"
+avatar = ExtResource("5_2ul6c")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_54cm4"]
+script = ExtResource("4_ct1yi")
+content = "*你要和我说什么事吗？
+   我的孩子。"
+avatar = ExtResource("8_wupl0")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("9_blhgw")
+dialogue_list = Array[ExtResource("4_ct1yi")]([SubResource("Resource_00iok"), SubResource("Resource_54cm4")])
+id = "不饿"
+next_id = "沉默"
+choices = Array[String](["没事", "怎么才能离开Ruins"])
+choice_next_ids = Array[String](["没事了", "end1"])
+choice_effect = SubResource("Resource_rbhwe")
+metadata/_custom_type_script = "uid://br0sgnpurqem5"

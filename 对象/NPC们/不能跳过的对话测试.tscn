@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8raimy7g01cr"]
 
-[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="1_741pn"]
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_741pn"]
 [ext_resource type="Texture2D" uid="uid://cc86i26y1ivtk" path="res://icon.svg" id="2_li703"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
@@ -23,6 +23,8 @@ scale = Vector2(1.1154813, 0.6640347)
 shape = SubResource("RectangleShape2D_trlyu")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1872116843]
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1652434430]
 shape = SubResource("RectangleShape2D_x7mpe")

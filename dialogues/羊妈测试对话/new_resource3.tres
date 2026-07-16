@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://cot2ng6swhbi5"]
+
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="1_yrt1s"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="2_ieqbi"]
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="3_jhn1q"]
+[ext_resource type="Texture2D" uid="uid://by3pwt4mv25tx" path="res://素材/toriel_face/spr_face_torielhappy_left_0.png" id="4_equjf"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="5_yo38g"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="6_ctycv"]
+[ext_resource type="Texture2D" uid="uid://bv4ytv1ovu8hq" path="res://素材/toriel_face/spr_face_torielwhat_0.png" id="7_gidip"]
+[ext_resource type="Texture2D" uid="uid://dbjh5mr7i5e6q" path="res://素材/toriel_face/spr_face_torielblinkside_0.png" id="8_ovhe4"]
+[ext_resource type="Texture2D" uid="uid://7q3navp3blvu" path="res://素材/toriel_face/spr_face_torielhappy_right_0.png" id="9_pymoh"]
+[ext_resource type="Texture2D" uid="uid://be8j8ey47js8k" path="res://素材/toriel_face/spr_face_torielblink_0.png" id="10_3vlts"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="11_p07cn"]
+
+[sub_resource type="Resource" id="Resource_4l1vf"]
+script = ExtResource("3_jhn1q")
+content = "*冰箱里面应该还有午餐剩下的奶油派。"
+avatar = ExtResource("4_equjf")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_5hbtc"]
+script = ExtResource("3_jhn1q")
+content = "*我去热给你吃。"
+avatar = ExtResource("4_equjf")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_b5v2t"]
+script = ExtResource("3_jhn1q")
+content = "*......"
+avatar = ExtResource("7_gidip")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_n104l"]
+script = ExtResource("3_jhn1q")
+content = "*你这样看着我..."
+avatar = ExtResource("8_ovhe4")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_8dayw"]
+script = ExtResource("3_jhn1q")
+content = "*是想吃蜗牛派吗？"
+avatar = ExtResource("4_equjf")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_ir0xs"]
+script = ExtResource("3_jhn1q")
+content = "*但是我要出门去买些蜗牛。
+因为家里的蜗牛已经不够了。"
+avatar = ExtResource("9_pymoh")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_stnyb"]
+script = ExtResource("3_jhn1q")
+content = "*......"
+avatar = ExtResource("8_ovhe4")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_abrd7"]
+script = ExtResource("3_jhn1q")
+content = "*你肯定有心事，
+告诉我是什么事吧，我的孩子。"
+avatar = ExtResource("10_3vlts")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("11_p07cn")
+dialogue_list = Array[ExtResource("3_jhn1q")]([SubResource("Resource_4l1vf"), SubResource("Resource_5hbtc"), SubResource("Resource_b5v2t"), SubResource("Resource_n104l"), SubResource("Resource_8dayw"), SubResource("Resource_ir0xs"), SubResource("Resource_stnyb"), SubResource("Resource_abrd7")])
+id = "饿了"
+next_id = "饿了"
+choices = Array[String](["没事", "怎么才能离开Ruins"])
+choice_next_ids = Array[String](["end", "end1"])
+metadata/_custom_type_script = "uid://br0sgnpurqem5"

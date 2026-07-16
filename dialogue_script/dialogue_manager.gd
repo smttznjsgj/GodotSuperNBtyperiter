@@ -7,9 +7,11 @@ extends Control
 @export var right_avatar : TextureRect
 
 @onready var typing_audio: AudioStreamPlayer = $TypingAudio
-@onready var dialogue_box: HBoxContainer = $container/DialogueBox
 
-@onready var end_hint: Label = %end_hint
+@onready var dialogue_box: HBoxContainer = $container/DialogueBox
+@onready var choicecontainer: Control = $container/Choicecontainer
+@onready var end_hint: Label = %end_hint#后续会把这个小光标优化为用于在主句完成之后进行吐槽的简短的带头像的句子
+
 @onready var container: Control = $container
 @onready var avatar_left_panel: Panel = $container/DialogueBox/Mainpanel/HBoxContainer/avatar_left_panel
 @onready var avatar_right_panel: Panel = $container/DialogueBox/Mainpanel/HBoxContainer/avatar_right_panel
@@ -49,9 +51,14 @@ var dialogue_index : int = 0
 var blink_tween: Tween
 var effect_tween : Tween
 var persistent_effect_running: bool = false
-
+var _ui_at_top: bool = false
+var _stay_active: bool = false
+var _stay_timer: float = 0.0
+var _stay_duration: float = 0.0
+var _stay_auto_advance: bool = false
 func display_next_dialogue() -> void:
 	end_hint.modulate.a = 0.0
+	_stay_active = false
 	if blink_tween and blink_tween.is_running():
 		blink_tween.kill()
 	
@@ -90,7 +97,12 @@ func display_next_dialogue() -> void:
 		return
 	var dialogue := main_dialogue.dialogue_list[dialogue_index]
 	var processed_content = dialogue.content.replace("{name}", Global.player.player_name)
-	
+	if dialogue.position_up and not _ui_at_top:
+		_move_ui_to_top()
+		_ui_at_top = true
+	elif not dialogue.position_up and _ui_at_top:
+		_move_ui_to_bottom()
+		_ui_at_top = false
 	if typing_tween and typing_tween.is_running():
 		if not dialogue.can_skip:
 			return
@@ -113,6 +125,7 @@ func display_next_dialogue() -> void:
 		return
 	else:
 		character_name_text.text = dialogue.character_name
+		Global.can_act = dialogue.can_act
 		current_typing_sound = dialogue.typing_sound if dialogue.typing_sound else default_typing_sound
 		
 		if effect_tween and effect_tween.is_running() and not dialogue.effect.is_empty():
@@ -187,16 +200,27 @@ func display_next_dialogue() -> void:
 				typing_tween.tween_interval(0.15)
 		typing_tween.tween_callback(func():
 			dialogue_index += 1
-			if dialogue.auto_continue:
+			if dialogue.stay_duration > 0.0:
+				_stay_active = true
+				_stay_timer = 0.0
+				_stay_duration = dialogue.stay_duration
+				_stay_auto_advance = dialogue.auto_continue
+				if not dialogue.hide_end_hint:
+					end_hint.modulate.a = 1.0
+					blink_tween = get_tree().create_tween().set_loops()
+					blink_tween.tween_property(end_hint, "modulate:a", 0.2, 0.4)
+					blink_tween.tween_property(end_hint, "modulate:a", 1.0, 0.4)
+			elif dialogue.auto_continue:
 				end_hint.modulate.a = 0.0
 				var next := get_tree().create_tween()
 				next.tween_interval(0.15)
 				next.tween_callback(display_next_dialogue)
 			else:
-				end_hint.modulate.a = 1.0
-				blink_tween = get_tree().create_tween().set_loops()
-				blink_tween.tween_property(end_hint, "modulate:a", 0.2, 0.4)
-				blink_tween.tween_property(end_hint, "modulate:a", 1.0, 0.4)
+				if not dialogue.hide_end_hint:
+					end_hint.modulate.a = 1.0
+					blink_tween = get_tree().create_tween().set_loops()
+					blink_tween.tween_property(end_hint, "modulate:a", 0.2, 0.4)
+					blink_tween.tween_property(end_hint, "modulate:a", 1.0, 0.4)
 		)
 		
 		left_avatar.texture = dialogue.avatar
@@ -215,6 +239,9 @@ func display_next_dialogue() -> void:
 	#dialogue_finished.emit()
 
 func _finish_dialogue(skip_broadcast: bool = false) -> void:
+	if _ui_at_top:
+		_move_ui_to_bottom()
+		_ui_at_top = false
 	persistent_effect_running = false
 	container.position = Vector2.ZERO
 	container.rotation_degrees = 0.0
@@ -481,12 +508,29 @@ func start_dialogue(group: DialogueGroup) -> void:
 	current_choice_index = 0
 	visible = true
 	Global.can_act = false
+	if group.dialogue_list.size() > 0 and group.dialogue_list[0].position_up:
+		_move_ui_to_top()
+		_ui_at_top = true
 	display_next_dialogue()
 
+func _move_ui_to_top() -> void:
+	dialogue_box.position.y = 8
+	end_hint.position.y = 128
+	choicecontainer.position.y = -419
 
+func _move_ui_to_bottom() -> void:
+	dialogue_box.position.y = 318
+	end_hint.position.y = 438
+	choicecontainer.position.y = -109
 
-
-
+func _process(delta: float) -> void:
+	if not _stay_active:
+		return
+	_stay_timer += delta
+	if _stay_timer >= _stay_duration:
+		_stay_active = false
+		if _stay_auto_advance:
+			display_next_dialogue()
 
 
 
@@ -515,6 +559,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			_confirm_choice()
 		return
 	if event.is_action_pressed("interact"):
+		if _stay_active:
+			return
 		display_next_dialogue()
 	
 

@@ -14,34 +14,27 @@
 [ext_resource type="PackedScene" uid="uid://op6qmkjr4a3v" path="res://对象/NPC们/npc_choice_test.tscn" id="10_sbee0"]
 [ext_resource type="Script" uid="uid://bsko0xhx61xck" path="res://dialogue_script/effects_script/Choice_effects/choice_snap_effect.gd" id="13_6naqk"]
 [ext_resource type="Script" uid="uid://o5w5t5g5q8oj" path="res://dialogue_script/effects_script/Choice_effects/choice_wobbel_effect.gd" id="14_8ajjh"]
-[ext_resource type="PackedScene" uid="uid://cevidcc5uhh41" path="res://对象/NPC基类/高级效果对话.tscn" id="14_vcrkc"]
+[ext_resource type="PackedScene" uid="uid://cevidcc5uhh41" path="res://对象/NPC们/高级效果对话.tscn" id="14_vcrkc"]
 [ext_resource type="Script" uid="uid://erbvo1gibc3o" path="res://dialogue_script/effects_script/effect_wobble.gd" id="15_f40vf"]
 [ext_resource type="Script" uid="uid://dsfm23hvgynuq" path="res://dialogue_script/effects_script/effect_shake.gd" id="16_pt8ia"]
 [ext_resource type="Resource" uid="uid://0wqd884i33k" path="res://dialogues/bbcode_demo.tres" id="17_wswju"]
 [ext_resource type="PackedScene" uid="uid://8raimy7g01cr" path="res://对象/NPC们/不能跳过的对话测试.tscn" id="18_g1cbb"]
-[ext_resource type="PackedScene" uid="uid://dgab3rq0ja8ng" path="res://对象/NPC基类/选项系统的完整演示.tscn" id="20_ear1o"]
+[ext_resource type="PackedScene" uid="uid://dgab3rq0ja8ng" path="res://对象/NPC们/选项系统的完整演示.tscn" id="20_ear1o"]
 [ext_resource type="Resource" uid="uid://b38mdkiao6332" path="res://dialogues/choice_demo_intro.tres" id="21_ear1o"]
 [ext_resource type="Resource" uid="uid://b7k1epwuhwpfe" path="res://dialogues/choice_demo_snap_blocked.tres" id="22_fol8s"]
 [ext_resource type="Resource" uid="uid://bi4djagptplo2" path="res://dialogues/choice_demo_snap_free.tres" id="23_dlmox"]
 [ext_resource type="Resource" uid="uid://dvtsooob1s8jk" path="res://dialogues/choice_demo_wobble.tres" id="24_bnjh2"]
 [ext_resource type="Resource" uid="uid://cei2bhdl8mw1y" path="res://dialogues/choice_demo_end.tres" id="25_dif85"]
 [ext_resource type="PackedScene" uid="uid://440xn70afvhh" path="res://对象/NPC们/头像排版测试.tscn" id="26_fol8s"]
-[ext_resource type="Texture2D" uid="uid://dsp6j427yvoja" path="res://素材/toriel_face/sprite65_0.png" id="27_bnjh2"]
-[ext_resource type="Texture2D" uid="uid://cisqqufc4lsjj" path="res://素材/toriel_face/spr_face_torieltalk_1.png" id="28_dif85"]
-[ext_resource type="Texture2D" uid="uid://be8j8ey47js8k" path="res://素材/toriel_face/spr_face_torielblink_0.png" id="29_ahicj"]
-[ext_resource type="Texture2D" uid="uid://dqufp2p7eyri5" path="res://素材/toriel_face/spr_face_toriel_laughleft_0.png" id="30_nw8nw"]
-[ext_resource type="Texture2D" uid="uid://d301cwng3scum" path="res://素材/toriel_face/spr_face_torieltalkside_0.png" id="30_oyqil"]
-[ext_resource type="Texture2D" uid="uid://bv4ytv1ovu8hq" path="res://素材/toriel_face/spr_face_torielwhat_0.png" id="31_nw8nw"]
-[ext_resource type="Texture2D" uid="uid://d4hrkqm2sibgx" path="res://素材/toriel_face/spr_face_torielscared_0.png" id="31_r57xy"]
-[ext_resource type="Texture2D" uid="uid://7q3navp3blvu" path="res://素材/toriel_face/spr_face_torielhappy_right_0.png" id="32_nw8nw"]
-[ext_resource type="Texture2D" uid="uid://by3pwt4mv25tx" path="res://素材/toriel_face/spr_face_torielhappy_left_0.png" id="33_26vsw"]
-[ext_resource type="Texture2D" uid="uid://dbjh5mr7i5e6q" path="res://素材/toriel_face/spr_face_torielblinkside_0.png" id="34_70euv"]
-[ext_resource type="Texture2D" uid="uid://m7omhx1a1aos" path="res://素材/toriel_face/spr_face_torielencourage_0.png" id="35_vu4bj"]
-[ext_resource type="Texture2D" uid="uid://csbbqa6tu2w45" path="res://素材/toriel_face/spr_face_torielencourage_1.png" id="36_nilh7"]
-[ext_resource type="Texture2D" uid="uid://c34wnug8m1xiq" path="res://素材/toriel_face/spr_face_torielcoldblink_0.png" id="37_w1msd"]
-[ext_resource type="Texture2D" uid="uid://btl4ph3dw2e4x" path="res://素材/toriel_face/spr_face_torielmadblink_0.png" id="38_knady"]
-[ext_resource type="Texture2D" uid="uid://c1dfa5wxgf8e2" path="res://素材/toriel_face/spr_face_torielcold_1.png" id="39_57p84"]
-[ext_resource type="Texture2D" uid="uid://dqmxu66glncts" path="res://素材/toriel_face/spr_face_torielcold_0.png" id="40_stlnt"]
+[ext_resource type="Resource" uid="uid://dt5nwuxnkxpkl" path="res://dialogues/羊妈测试对话/new_resource.tres" id="27_b83ri"]
+[ext_resource type="Resource" uid="uid://buevr6rucgrt7" path="res://dialogues/羊妈测试对话/new_resource2.tres" id="28_pppdl"]
+[ext_resource type="Resource" uid="uid://cot2ng6swhbi5" path="res://dialogues/羊妈测试对话/new_resource3.tres" id="29_b11wq"]
+[ext_resource type="Resource" uid="uid://cwh5ouv1e1nok" path="res://dialogues/羊妈测试对话/new_resource4.tres" id="30_wvjs4"]
+[ext_resource type="Resource" uid="uid://ddotr6d53eo5j" path="res://dialogues/羊妈测试对话/new_resource5.tres" id="31_0ubw4"]
+[ext_resource type="Resource" uid="uid://bsjfkjrsgy41h" path="res://dialogues/羊妈测试对话/new_resource6.tres" id="32_5dinp"]
+[ext_resource type="Resource" uid="uid://iv14acpyolvw" path="res://dialogues/羊妈测试对话/new_resource7.tres" id="33_2et4b"]
+[ext_resource type="PackedScene" uid="uid://cfbimc6dmf6am" path="res://对象/触发对话的基类/NPC，chest/npc.tscn" id="35_b11wq"]
+[ext_resource type="PackedScene" uid="uid://bl4gtfhx4c56s" path="res://对象/环境叙事zone旁白/flower_zone.tscn" id="43_26vsw"]
 
 [sub_resource type="Resource" id="Resource_psmef"]
 script = ExtResource("5_j4i0s")
@@ -425,7 +418,7 @@ metadata/_custom_type_script = "uid://c06clw1acxak"
 script = ExtResource("4_xg7ot")
 dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_60srg")])
 id = "box"
-next_id = "saw_box"
+next_id = "box"
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
 [sub_resource type="Resource" id="Resource_eklpn"]
@@ -448,22 +441,24 @@ metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
 [sub_resource type="Resource" id="Resource_gsaes"]
 script = ExtResource("15_f40vf")
-rotation = 18.1
+rotation = 22.6
 count = 10
 decay = 0.86
 snap_threshold = 0.95
-fierce_return = true
 metadata/_custom_type_script = "uid://erbvo1gibc3o"
 
 [sub_resource type="Resource" id="Resource_rp6jv"]
 script = ExtResource("5_j4i0s")
 content = "*（摇晃效果摇晃效果摇晃效果摇晃效果摇晃效果摇晃效果）"
 effect = Array[ExtResource("6_sbee0")]([SubResource("Resource_gsaes")])
+position_up = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Resource_4ixcu"]
 script = ExtResource("16_pt8ia")
+magnitude_x = 20.0
 count = 10
+speed = 0.02
 metadata/_custom_type_script = "uid://dsfm23hvgynuq"
 
 [sub_resource type="Resource" id="Resource_ba5js"]
@@ -532,6 +527,7 @@ metadata/_custom_type_script = "uid://br0sgnpurqem5"
 script = ExtResource("5_j4i0s")
 content = "*这。是。一。句。你。不。能。跳。过。的。对话。"
 can_skip = false
+auto_continue = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Resource_36b4k"]
@@ -558,6 +554,8 @@ metadata/_custom_type_script = "uid://c06clw1acxak"
 [sub_resource type="Resource" id="Resource_naavx"]
 script = ExtResource("5_j4i0s")
 content = "结束。"
+can_skip = false
+auto_continue = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Resource_n4krp"]
@@ -599,338 +597,63 @@ id = "intro1"
 next_id = "intro"
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
-[sub_resource type="Resource" id="Resource_r6xq2"]
-script = ExtResource("13_6naqk")
-metadata/_custom_type_script = "uid://bsko0xhx61xck"
-
 [sub_resource type="Resource" id="Resource_x3bxa"]
 script = ExtResource("5_j4i0s")
-content = "*哦，你好！{name}！"
-avatar = ExtResource("27_bnjh2")
+content = "* 一片花田。"
+position_up = true
+can_skip = false
+auto_continue = true
+can_act = true
+stay_duration = 3.0
+hide_end_hint = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_r6xq2"]
+script = ExtResource("5_j4i0s")
+content = "* 有一种平静的力量在你心中。"
+position_up = true
+can_skip = false
+auto_continue = true
+can_act = true
+stay_duration = 2.0
+hide_end_hint = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Resource_rl7lv"]
-script = ExtResource("5_j4i0s")
-content = "*不好意思，我看书看的太入迷了，
-没有注意到你在喊我。"
-avatar = ExtResource("28_dif85")
-metadata/_custom_type_script = "uid://c06clw1acxak"
+script = ExtResource("4_xg7ot")
+dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_x3bxa"), SubResource("Resource_r6xq2")])
+id = "flower"
+next_id = "flower"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
 [sub_resource type="Resource" id="Resource_qxqa5"]
 script = ExtResource("5_j4i0s")
-content = "*你饿了吗？还是要出门一个人去玩？"
-avatar = ExtResource("29_ahicj")
+content = "* 111111111111111111111"
+position_up = true
+can_skip = false
+auto_continue = true
+can_act = true
+stay_duration = 5.0
+hide_end_hint = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_00iok"]
+script = ExtResource("5_j4i0s")
+content = "* 111111111111111"
+position_up = true
+can_skip = false
+auto_continue = true
+can_act = true
+stay_duration = 3.0
+hide_end_hint = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Resource_4xl2j"]
 script = ExtResource("4_xg7ot")
-dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_x3bxa"), SubResource("Resource_rl7lv"), SubResource("Resource_qxqa5")])
-id = "B1"
-next_id = "B12"
-choices = Array[String](["不是很饿", "有点饿了", "要出门玩", "怎么才能离开Ruins"])
-choice_next_ids = Array[String](["不饿", "饿了", "出门", "end1"])
-choice_effect = SubResource("Resource_r6xq2")
-metadata/_custom_type_script = "uid://br0sgnpurqem5"
-
-[sub_resource type="Resource" id="Resource_rbhwe"]
-script = ExtResource("13_6naqk")
-metadata/_custom_type_script = "uid://bsko0xhx61xck"
-
-[sub_resource type="Resource" id="Resource_00iok"]
-script = ExtResource("5_j4i0s")
-content = "*如果你饿了的话，
-冰箱里面还有午餐剩下的半个奶油派。"
-avatar = ExtResource("28_dif85")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_54cm4"]
-script = ExtResource("5_j4i0s")
-content = "*你要和我说什么事吗？
-   我的孩子。"
-avatar = ExtResource("29_ahicj")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_2nnx4"]
-script = ExtResource("4_xg7ot")
-dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_00iok"), SubResource("Resource_54cm4")])
-id = "不饿"
-next_id = "沉默"
-choices = Array[String](["没事", "怎么才能离开Ruins"])
-choice_next_ids = Array[String](["没事了", "end1"])
-choice_effect = SubResource("Resource_rbhwe")
-metadata/_custom_type_script = "uid://br0sgnpurqem5"
-
-[sub_resource type="Resource" id="Resource_4l1vf"]
-script = ExtResource("5_j4i0s")
-content = "*冰箱里面应该还有午餐剩下的奶油派。"
-avatar = ExtResource("33_26vsw")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_5hbtc"]
-script = ExtResource("5_j4i0s")
-content = "*我去热给你吃。"
-avatar = ExtResource("33_26vsw")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_b5v2t"]
-script = ExtResource("5_j4i0s")
-content = "*......"
-avatar = ExtResource("31_nw8nw")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_n104l"]
-script = ExtResource("5_j4i0s")
-content = "*你这样看着我..."
-avatar = ExtResource("34_70euv")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_8dayw"]
-script = ExtResource("5_j4i0s")
-content = "*是想吃蜗牛派吗？"
-avatar = ExtResource("33_26vsw")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_ir0xs"]
-script = ExtResource("5_j4i0s")
-content = "*但是我要出门去买些蜗牛。
-因为家里的蜗牛已经不够了。"
-avatar = ExtResource("32_nw8nw")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_stnyb"]
-script = ExtResource("5_j4i0s")
-content = "*......"
-avatar = ExtResource("34_70euv")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_abrd7"]
-script = ExtResource("5_j4i0s")
-content = "*你肯定有心事，
-告诉我是什么事吧，我的孩子。"
-avatar = ExtResource("29_ahicj")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_i7cw6"]
-script = ExtResource("4_xg7ot")
-dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_4l1vf"), SubResource("Resource_5hbtc"), SubResource("Resource_b5v2t"), SubResource("Resource_n104l"), SubResource("Resource_8dayw"), SubResource("Resource_ir0xs"), SubResource("Resource_stnyb"), SubResource("Resource_abrd7")])
-id = "饿了"
-next_id = "饿了"
-choices = Array[String](["没事", "怎么才能离开Ruins"])
-choice_next_ids = Array[String](["end", "end1"])
-metadata/_custom_type_script = "uid://br0sgnpurqem5"
-
-[sub_resource type="Resource" id="Resource_kua0a"]
-script = ExtResource("5_j4i0s")
-content = "* 哦，你要出门的话。"
-avatar = ExtResource("29_ahicj")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_1heip"]
-script = ExtResource("5_j4i0s")
-content = "* 冰箱里还有半个奶油糖派，
-可以带在身上。"
-avatar = ExtResource("30_nw8nw")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_713ll"]
-script = ExtResource("5_j4i0s")
-content = "* 玩饿了的话方便吃！"
-avatar = ExtResource("33_26vsw")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_d4ipb"]
-script = ExtResource("5_j4i0s")
-content = "* ..."
-avatar = ExtResource("33_26vsw")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_s1yav"]
-script = ExtResource("5_j4i0s")
-content = "* 还有什么事吗？"
-avatar = ExtResource("30_oyqil")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_wm2c8"]
-script = ExtResource("4_xg7ot")
-dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_kua0a"), SubResource("Resource_1heip"), SubResource("Resource_713ll"), SubResource("Resource_d4ipb"), SubResource("Resource_s1yav")])
-id = "出门"
-choices = Array[String](["没事了", "如何离开Ruins"])
-choice_next_ids = Array[String](["end", "end1"])
-metadata/_custom_type_script = "uid://br0sgnpurqem5"
-
-[sub_resource type="Resource" id="Resource_553pd"]
-script = ExtResource("4_xg7ot")
-id = "沉默"
-metadata/_custom_type_script = "uid://br0sgnpurqem5"
-
-[sub_resource type="Resource" id="Resource_njmod"]
-script = ExtResource("5_j4i0s")
-content = "*。。。。"
-avatar = ExtResource("30_oyqil")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_8rns0"]
-script = ExtResource("5_j4i0s")
-content = "*但是，我的孩子，
-你最好还是不要想离开遗迹这件事。
-行吗？"
-avatar = ExtResource("31_r57xy")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_r5l33"]
-script = ExtResource("5_j4i0s")
-content = "*就在这里快快乐乐的。"
-avatar = ExtResource("28_dif85")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_0rh08"]
-script = ExtResource("5_j4i0s")
-content = "*我可以给你做好吃的派，
-念有趣的故事。"
-avatar = ExtResource("28_dif85")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_gkbvp"]
-script = ExtResource("5_j4i0s")
-content = "*你还能在遗迹的浅水塘捉青蛙玩！"
-avatar = ExtResource("32_nw8nw")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_yhq2q"]
-script = ExtResource("5_j4i0s")
-content = "*......"
-avatar = ExtResource("33_26vsw")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_7wu5a"]
-script = ExtResource("5_j4i0s")
-content = "*......"
-avatar = ExtResource("34_70euv")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_cvw5p"]
-script = ExtResource("5_j4i0s")
-content = "*我知道你很想离开 Ruins。"
-avatar = ExtResource("35_vu4bj")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_dw65b"]
-script = ExtResource("5_j4i0s")
-content = "*但是，亲爱的..."
-avatar = ExtResource("36_nilh7")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_3csxk"]
-script = ExtResource("5_j4i0s")
-content = "*我真的不能让你离开。"
-avatar = ExtResource("37_w1msd")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_tuidn"]
-script = ExtResource("5_j4i0s")
-content = "*虽然这对一个孩子来说有些残酷。"
-avatar = ExtResource("35_vu4bj")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_xjt4s"]
-script = ExtResource("5_j4i0s")
-content = "*但是，我希望你也能理解。"
-avatar = ExtResource("36_nilh7")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_l0yeh"]
-script = ExtResource("5_j4i0s")
-content = "*如果你离开了Ruins，
-我就不能在保护你，
-我的孩子。"
-avatar = ExtResource("35_vu4bj")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_wi0h3"]
-script = ExtResource("5_j4i0s")
-content = "*你不知道，如果你离开了Ruins，
-外面的怪物会对你做出什么事情。"
-avatar = ExtResource("37_w1msd")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_uhbhb"]
-script = ExtResource("5_j4i0s")
-content = "*..."
-avatar = ExtResource("38_knady")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_8qf8r"]
-script = ExtResource("5_j4i0s")
-content = "*......"
-avatar = ExtResource("37_w1msd")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_7wo3u"]
-script = ExtResource("5_j4i0s")
-content = "*别这样看着我，别用这种眼神..."
-avatar = ExtResource("39_57p84")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_5gg7f"]
-script = ExtResource("5_j4i0s")
-content = "*......"
-avatar = ExtResource("40_stlnt")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_7gxjk"]
-script = ExtResource("5_j4i0s")
-content = "*我的孩子。我很抱歉..."
-avatar = ExtResource("35_vu4bj")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_jh71f"]
-script = ExtResource("5_j4i0s")
-content = "*我很抱歉，要让你在这里长大。"
-avatar = ExtResource("36_nilh7")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_d6rpb"]
-script = ExtResource("5_j4i0s")
-content = "*你是对的...因为你在这里没有朋友，
-也不能得到好的教育。
-"
-avatar = ExtResource("34_70euv")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_p3uqr"]
-script = ExtResource("5_j4i0s")
-content = "*如果你要离开，
-我会给你准备你路上要穿衣服，鞋子，
-还有要带的食物，以及其他东西。"
-avatar = ExtResource("29_ahicj")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_du300"]
-script = ExtResource("5_j4i0s")
-content = "*但是，一旦离开Ruins，
-就不要再回来了。"
-avatar = ExtResource("30_oyqil")
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_p0g8p"]
-script = ExtResource("4_xg7ot")
-dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_njmod"), SubResource("Resource_8rns0"), SubResource("Resource_r5l33"), SubResource("Resource_0rh08"), SubResource("Resource_gkbvp"), SubResource("Resource_yhq2q"), SubResource("Resource_7wu5a"), SubResource("Resource_cvw5p"), SubResource("Resource_dw65b"), SubResource("Resource_3csxk"), SubResource("Resource_tuidn"), SubResource("Resource_xjt4s"), SubResource("Resource_l0yeh"), SubResource("Resource_wi0h3"), SubResource("Resource_uhbhb"), SubResource("Resource_8qf8r"), SubResource("Resource_7wo3u"), SubResource("Resource_5gg7f"), SubResource("Resource_7gxjk"), SubResource("Resource_jh71f"), SubResource("Resource_d6rpb"), SubResource("Resource_p3uqr"), SubResource("Resource_du300")])
-id = "end"
-metadata/_custom_type_script = "uid://br0sgnpurqem5"
-
-[sub_resource type="Resource" id="Resource_v3rdw"]
-script = ExtResource("5_j4i0s")
-content = "* 稍等一下，我的孩子。"
-metadata/_custom_type_script = "uid://c06clw1acxak"
-
-[sub_resource type="Resource" id="Resource_v21gs"]
-script = ExtResource("4_xg7ot")
-dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_njmod"), SubResource("Resource_8rns0"), SubResource("Resource_r5l33"), SubResource("Resource_0rh08"), SubResource("Resource_gkbvp"), SubResource("Resource_yhq2q"), SubResource("Resource_7wu5a"), SubResource("Resource_cvw5p"), SubResource("Resource_dw65b"), SubResource("Resource_3csxk"), SubResource("Resource_tuidn"), SubResource("Resource_xjt4s"), SubResource("Resource_l0yeh"), SubResource("Resource_wi0h3"), SubResource("Resource_uhbhb"), SubResource("Resource_8qf8r"), SubResource("Resource_7wo3u"), SubResource("Resource_5gg7f"), SubResource("Resource_7gxjk"), SubResource("Resource_jh71f"), SubResource("Resource_d6rpb"), SubResource("Resource_p3uqr"), SubResource("Resource_du300"), SubResource("Resource_v3rdw")])
-id = "end1"
+dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_qxqa5"), SubResource("Resource_00iok")])
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
 [node name="Node2D" type="Node2D" unique_id=1019973989]
-position = Vector2(0, 1)
 
 [node name="Player" parent="." unique_id=1997236098 instance=ExtResource("1_ton2f")]
 position = Vector2(346, 217)
@@ -951,7 +674,7 @@ scale = Vector2(2, 2)
 dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_8s16s"), SubResource("Resource_fol8s"), SubResource("Resource_x1ppu"), SubResource("Resource_b83ri")])
 
 [node name="冰箱" parent="." unique_id=1446510662 instance=ExtResource("4_hhrv1")]
-position = Vector2(442, 109)
+position = Vector2(421, 47)
 
 [node name="四个选项对话的测试" parent="." unique_id=446920957 instance=ExtResource("10_sbee0")]
 position = Vector2(244, 187)
@@ -981,7 +704,17 @@ position = Vector2(414, 352)
 scale = Vector2(3, 3)
 dialogue_groups = Array[ExtResource("4_xg7ot")]([ExtResource("21_ear1o"), ExtResource("22_fol8s"), ExtResource("23_dlmox"), ExtResource("24_bnjh2"), ExtResource("25_dif85"), SubResource("Resource_ntmer"), SubResource("Resource_fo3g0")])
 
-[node name="坐着的羊妈" parent="." unique_id=1674666218 instance=ExtResource("26_fol8s")]
-position = Vector2(96, 184)
+[node name="坐着的羊妈" parent="." unique_id=810312094 instance=ExtResource("26_fol8s")]
+position = Vector2(128, 245)
 scale = Vector2(2, 2)
-dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_4xl2j"), SubResource("Resource_2nnx4"), SubResource("Resource_i7cw6"), SubResource("Resource_wm2c8"), SubResource("Resource_553pd"), SubResource("Resource_p0g8p"), SubResource("Resource_v21gs")])
+dialogue_groups = Array[ExtResource("4_xg7ot")]([ExtResource("27_b83ri"), ExtResource("28_pppdl"), ExtResource("29_b11wq"), ExtResource("30_wvjs4"), ExtResource("31_0ubw4"), ExtResource("32_5dinp"), ExtResource("33_2et4b")])
+
+[node name="Node2D" parent="." unique_id=1449521623 instance=ExtResource("43_26vsw")]
+position = Vector2(163, 368)
+scale = Vector2(2, 2)
+dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_rl7lv")])
+
+[node name="NPC" parent="." unique_id=1234230549 instance=ExtResource("35_b11wq")]
+position = Vector2(305, 439)
+scale = Vector2(2, 2)
+dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_4xl2j")])

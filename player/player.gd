@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 
@@ -33,10 +34,13 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if not Global.can_act :
 		return
+	
 	if event.is_action_pressed("interact"):
 		print("act!")
 		if ray_cast_2d.is_colliding():
-			var target =ray_cast_2d.get_collider()
+			var target = ray_cast_2d.get_collider()
+			if target is Area2D:
+				target = target.get_parent()
 			if target.has_method("interact"):
 				target.interact()
 				get_viewport().set_input_as_handled()

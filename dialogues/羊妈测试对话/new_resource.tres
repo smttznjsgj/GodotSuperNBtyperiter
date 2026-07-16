@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://dt5nwuxnkxpkl"]
+
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="1_k456l"]
+[ext_resource type="Script" uid="uid://bsko0xhx61xck" path="res://dialogue_script/effects_script/Choice_effects/choice_snap_effect.gd" id="2_a7m5u"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="3_lp1r2"]
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="4_x7ulb"]
+[ext_resource type="Texture2D" uid="uid://dsp6j427yvoja" path="res://素材/toriel_face/sprite65_0.png" id="5_kqgsm"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_8iw4w"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="7_me3rv"]
+[ext_resource type="Texture2D" uid="uid://cisqqufc4lsjj" path="res://素材/toriel_face/spr_face_torieltalk_1.png" id="8_k6qrr"]
+[ext_resource type="Texture2D" uid="uid://be8j8ey47js8k" path="res://素材/toriel_face/spr_face_torielblink_0.png" id="9_8uv1f"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="10_0jl44"]
+
+[sub_resource type="Resource" id="Resource_r6xq2"]
+script = ExtResource("2_a7m5u")
+metadata/_custom_type_script = "uid://bsko0xhx61xck"
+
+[sub_resource type="Resource" id="Resource_x3bxa"]
+script = ExtResource("4_x7ulb")
+content = "*哦，你好！{name}！"
+avatar = ExtResource("5_kqgsm")
+position_up = true
+can_skip = false
+can_act = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_rl7lv"]
+script = ExtResource("4_x7ulb")
+content = "*不好意思，我看书看的太入迷了，
+没有注意到你在喊我。"
+avatar = ExtResource("8_k6qrr")
+position_up = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_qxqa5"]
+script = ExtResource("4_x7ulb")
+content = "*你饿了吗？还是要出门一个人去玩？"
+avatar = ExtResource("9_8uv1f")
+can_act = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[resource]
+script = ExtResource("10_0jl44")
+dialogue_list = Array[ExtResource("4_x7ulb")]([SubResource("Resource_x3bxa"), SubResource("Resource_rl7lv"), SubResource("Resource_qxqa5")])
+id = "B1   "
+next_id = "B12"
+choices = Array[String](["不是很饿", "有点饿了", "要出门玩", "怎么才能离开Ruins"])
+choice_next_ids = Array[String](["不饿", "饿了", "出门", "end1"])
+choice_effect = SubResource("Resource_r6xq2")
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
