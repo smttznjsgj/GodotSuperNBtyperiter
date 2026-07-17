@@ -22,7 +22,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if not body is Player:
 		return
-	if DialogueUI.visible:
+	if DialogueUI.container.visible:
 		return
 	var group := _find_group(current_group_id)
 	if group:

@@ -24,3 +24,5 @@ collide_with_areas = true
 [node name="SprFMaincharad0Sheet" type="Sprite2D" parent="." unique_id=862627563]
 texture_filter = 1
 texture = ExtResource("2_rkbax")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=30532817]

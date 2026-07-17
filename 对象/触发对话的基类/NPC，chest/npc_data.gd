@@ -18,7 +18,7 @@ func _ready() -> void:
 		current_group_id = dialogue_groups[0].id
 	Global.dialogue_broadcast.connect(_on_broadcast)
 func interact() -> void:
-	if DialogueUI.visible:
+	if DialogueUI.container.visible:
 		return
 	var group := _find_group(current_group_id)
 	if group:

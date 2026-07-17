@@ -6,26 +6,41 @@ extends Control
 @export var left_avatar: TextureRect
 @export var right_avatar : TextureRect
 
+#region ———— CanvasLayer 引用（加相机后用这个） ————
+@onready var dialogue_box: HBoxContainer = $CanvasLayer/container/DialogueBox
+@onready var choicecontainer: Control = $CanvasLayer/container/Choicecontainer
+@onready var container: Control = $CanvasLayer/container
+@onready var choice_items: Array[ChoiceItem] = [
+	$CanvasLayer/container/Choicecontainer/Item0,
+	$CanvasLayer/container/Choicecontainer/Item1,
+	$CanvasLayer/container/Choicecontainer/Item2,
+	$CanvasLayer/container/Choicecontainer/Item3
+]
+@onready var choice_marker: Control = $CanvasLayer/container/Choicecontainer/Marker
+@onready var visual_marker: Control = $CanvasLayer/container/Choicecontainer/visualmarker
+@onready var avatar_left_panel: Panel = $CanvasLayer/container/DialogueBox/Mainpanel/HBoxContainer/avatar_left_panel
+@onready var avatar_right_panel: Panel = $CanvasLayer/container/DialogueBox/Mainpanel/HBoxContainer/avatar_right_panel
+#endregion
+#region ———— 原始引用（无相机时用，Ctrl+K 切换） ————
+# @onready var dialogue_box: HBoxContainer = $container/DialogueBox
+# @onready var choicecontainer: Control = $container/Choicecontainer
+# @onready var container: Control = $container
+# @onready var choice_items: Array[ChoiceItem] = [
+# 	$container/Choicecontainer/Item0,
+# 	$container/Choicecontainer/Item1,
+# 	$container/Choicecontainer/Item2,
+# 	$container/Choicecontainer/Item3
+# ]
+# @onready var choice_marker: Control = $container/Choicecontainer/Marker
+# @onready var visual_marker: Control = $container/Choicecontainer/visualmarker
+# @onready var avatar_left_panel: Panel = $container/DialogueBox/Mainpanel/HBoxContainer/avatar_left_panel
+# @onready var avatar_right_panel: Panel = $container/DialogueBox/Mainpanel/HBoxContainer/avatar_right_panel
+#endregion
+# ———— 不受影响的节点 ————
 @onready var typing_audio: AudioStreamPlayer = $TypingAudio
-
-@onready var dialogue_box: HBoxContainer = $container/DialogueBox
-@onready var choicecontainer: Control = $container/Choicecontainer
-@onready var end_hint: Label = %end_hint#后续会把这个小光标优化为用于在主句完成之后进行吐槽的简短的带头像的句子
-
-@onready var container: Control = $container
-@onready var avatar_left_panel: Panel = $container/DialogueBox/Mainpanel/HBoxContainer/avatar_left_panel
-@onready var avatar_right_panel: Panel = $container/DialogueBox/Mainpanel/HBoxContainer/avatar_right_panel
-
+@onready var end_hint: Label = %end_hint
 @onready var shake_audio: AudioStreamPlayer = $ShakeAudio
 @onready var choice_audio: AudioStreamPlayer = $ChoiceAudio
-@onready var choice_items: Array[ChoiceItem] = [
-	$container/Choicecontainer/Item0,
-	$container/Choicecontainer/Item1,
-	$container/Choicecontainer/Item2,
-	$container/Choicecontainer/Item3
-]
-@onready var choice_marker: Control = $container/Choicecontainer/Marker
-@onready var visual_marker: Control = $container/Choicecontainer/visualmarker
 
 var choices_active: bool = false
 var current_choice_index: int = 0
@@ -249,7 +264,8 @@ func _finish_dialogue(skip_broadcast: bool = false) -> void:
 	if not skip_broadcast:
 		Global.dialogue_broadcast.emit(main_dialogue.next_id)
 	Global.can_act = true
-	visible = false
+	container.visible = false
+	
 	dialogue_finished.emit()
 func _show_choices(group: DialogueGroup) -> void:
 	left_avatar.texture = null
@@ -486,7 +502,7 @@ func _strip_bbcode(text: String) -> String:
 
 
 func _ready() -> void:
-	visible = false
+	container.visible = false
 	current_typing_sound = default_typing_sound
 	for item in choice_items:
 		item.visible = false
@@ -506,7 +522,7 @@ func start_dialogue(group: DialogueGroup) -> void:
 	main_dialogue = group
 	dialogue_index = 0
 	current_choice_index = 0
-	visible = true
+	container.visible = true
 	Global.can_act = false
 	if group.dialogue_list.size() > 0 and group.dialogue_list[0].position_up:
 		_move_ui_to_top()
@@ -544,7 +560,7 @@ func _process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not visible:
+	if not container.visible:
 		return
 	if choices_active:
 		if event.is_action_pressed("ui_left"):

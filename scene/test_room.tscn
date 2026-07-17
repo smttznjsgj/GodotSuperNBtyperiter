@@ -600,6 +600,7 @@ metadata/_custom_type_script = "uid://br0sgnpurqem5"
 [sub_resource type="Resource" id="Resource_x3bxa"]
 script = ExtResource("5_j4i0s")
 content = "* 一片花田。"
+typing_speed = 0.1
 position_up = true
 can_skip = false
 auto_continue = true
@@ -611,6 +612,7 @@ metadata/_custom_type_script = "uid://c06clw1acxak"
 [sub_resource type="Resource" id="Resource_r6xq2"]
 script = ExtResource("5_j4i0s")
 content = "* 有一种平静的力量在你心中。"
+typing_speed = 0.1
 position_up = true
 can_skip = false
 auto_continue = true
