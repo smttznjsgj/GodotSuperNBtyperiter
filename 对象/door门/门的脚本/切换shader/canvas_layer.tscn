@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cwffl4role1ng"]
+
+[ext_resource type="Script" uid="uid://bqvywx71sjjkb" path="res://对象/door门/门的脚本/切换shader/SceneTransition.gd" id="1_xux1s"]
+[ext_resource type="AudioStream" uid="uid://56or58hb2g0j" path="res://素材/门声/Farming_Door_Open_Volume_1_1_2.wav" id="2_wsyx2"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=575375338]
+script = ExtResource("1_xux1s")
+fade_time = 1.35
+SFX_OPEN = ExtResource("2_wsyx2")

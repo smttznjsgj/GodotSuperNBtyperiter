@@ -1,3 +1,73 @@
 [gd_scene format=3 uid="uid://bvjfunlbknh4d"]
 
+[ext_resource type="PackedScene" uid="uid://gos4eovmxidm" path="res://对象/NPC们/房间2的一个测试NPC.tscn" id="1_ls077"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="2_klt63"]
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="3_u24po"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="4_vq78r"]
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="5_pa6du"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_clbfn"]
+[ext_resource type="Texture2D" uid="uid://cc86i26y1ivtk" path="res://icon.svg" id="6_u24po"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="7_0jy5m"]
+[ext_resource type="PackedScene" uid="uid://cp88wnlpnhjbn" path="res://对象/door门/门的脚本/交互门/interactdoor.tscn" id="10_0jy5m"]
+[ext_resource type="PackedScene" uid="uid://cuvshhhgpm3bf" path="res://对象/door门/具体的门/A房间的门.tscn" id="10_clbfn"]
+[ext_resource type="PackedScene" uid="uid://ct4fqe3jg1yoh" path="res://player/player.tscn" id="10_pa6du"]
+[ext_resource type="AudioStream" uid="uid://d3fxqgmmtkxgp" path="res://素材/门声/Farming_Door_Close_Medium_Volume_1_2_2.wav" id="11_0jy5m"]
+[ext_resource type="AudioStream" uid="uid://56or58hb2g0j" path="res://素材/门声/Farming_Door_Open_Volume_1_1_2.wav" id="11_d6gwx"]
+[ext_resource type="Script" uid="uid://byybnjrs7alwr" path="res://对象/door门/门的脚本/切换shader/transition_data.gd" id="13_icejk"]
+
+[sub_resource type="Resource" id="Resource_0hwwp"]
+script = ExtResource("5_pa6du")
+content = "* 欢迎来到测试房间testAroom ！"
+avatar = ExtResource("6_u24po")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_d6gwx"]
+script = ExtResource("2_klt63")
+dialogue_list = Array[ExtResource("5_pa6du")]([SubResource("Resource_0hwwp")])
+id = "Aroom1"
+next_id = "Aroom1"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
+[sub_resource type="Resource" id="Resource_3cnoe"]
+script = ExtResource("13_icejk")
+open_sound = ExtResource("11_d6gwx")
+close_sound = ExtResource("11_0jy5m")
+metadata/_custom_type_script = "uid://byybnjrs7alwr"
+
+[sub_resource type="Resource" id="Resource_icejk"]
+script = ExtResource("13_icejk")
+open_sound = ExtResource("11_d6gwx")
+close_sound = ExtResource("11_0jy5m")
+color = Color(0, 0.26666668, 0, 1)
+metadata/_custom_type_script = "uid://byybnjrs7alwr"
+
 [node name="小地图" type="Node2D" unique_id=1568773970]
+
+[node name="NPC" parent="." unique_id=666820554 instance=ExtResource("1_ls077")]
+position = Vector2(251, 138)
+dialogue_groups = Array[ExtResource("2_klt63")]([SubResource("Resource_d6gwx")])
+
+[node name="Player" parent="." unique_id=1997236098 groups=["player"] instance=ExtResource("10_pa6du")]
+position = Vector2(102, 131)
+scale = Vector2(2, 2)
+
+[node name="Door2" parent="." unique_id=1732229786 instance=ExtResource("10_0jy5m")]
+position = Vector2(13.000001, 105)
+scale = Vector2(2.5, 2.5)
+target_scene = "uid://cjnsuqg5xl3uj"
+spawn_target = "Troom_spawn_point"
+transition_data = SubResource("Resource_3cnoe")
+
+[node name="Aroom_spawn_point" type="Marker2D" parent="Door2" unique_id=1097422223]
+position = Vector2(-25.199999, 2.4000015)
+scale = Vector2(0.39999998, 0.39999998)
+
+[node name="Door" parent="." unique_id=15484042 instance=ExtResource("10_clbfn")]
+position = Vector2(197, 83)
+scale = Vector2(2.5, 2.5)
+target_scene = "uid://cjnsuqg5xl3uj"
+spawn_target = "Marker2D3"
+transition_data = SubResource("Resource_icejk")
+
+[node name="Marker2D2" type="Marker2D" parent="Door" unique_id=1147865101]
+position = Vector2(16.8, 0)

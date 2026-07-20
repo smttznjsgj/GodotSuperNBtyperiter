@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="动画代办，摄像机代办"
+config/name="动画代办，门房间跳转代办"
 run/main_scene="uid://cjnsuqg5xl3uj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -22,6 +22,8 @@ MCPInputService="*res://addons/godot_mcp/mcp_input_service.gd"
 MCPGameInspector="*res://addons/godot_mcp/mcp_game_inspector_service.gd"
 DialogueUI="*uid://b6xwb5u6e2vll"
 Global="*uid://ckh6730jdqbqm"
+Transition="*uid://dohm0tjb1jcje"
+SceneTransition="*uid://bqvywx71sjjkb"
 
 [display]
 
@@ -35,6 +37,10 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
+
+[global_group]
+
+player=""
 
 [input]
 

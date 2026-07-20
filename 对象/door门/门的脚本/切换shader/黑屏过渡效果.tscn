@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dohm0tjb1jcje"]
+
+[ext_resource type="Script" uid="uid://0e3f016uxbcn" path="res://对象/door门/门的脚本/切换shader/TransitionShader.gd" id="1_ns1tc"]
+
+[node name="transition" type="CanvasLayer" unique_id=1694552794]
+script = ExtResource("1_ns1tc")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=803358714]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

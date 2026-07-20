@@ -45,7 +45,12 @@ func _input(event: InputEvent) -> void:
 				target.interact()
 				get_viewport().set_input_as_handled()
 
-
+func _ready() -> void:
+	add_to_group("player")
+	print("spawn pos: ", Global.pending_spawn_pos)
+	if Global.pending_spawn_pos != Vector2.ZERO:
+		global_position = Global.pending_spawn_pos
+		Global.pending_spawn_pos = Vector2.ZERO
 	
 
 

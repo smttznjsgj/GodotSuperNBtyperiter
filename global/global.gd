@@ -5,6 +5,7 @@ var player : PlayerData
 
 signal dialogue_broadcast(next_id: String)
 
+var pending_spawn_pos: Vector2 = Vector2.ZERO
 var flags: Dictionary = {}
 
 func _ready() -> void:

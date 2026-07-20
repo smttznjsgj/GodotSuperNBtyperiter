@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_sbee0"]
 [ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="7_eel6g"]
 [ext_resource type="PackedScene" uid="uid://op6qmkjr4a3v" path="res://对象/NPC们/npc_choice_test.tscn" id="10_sbee0"]
+[ext_resource type="Texture2D" uid="uid://cc86i26y1ivtk" path="res://icon.svg" id="11_wvjs4"]
 [ext_resource type="Script" uid="uid://bsko0xhx61xck" path="res://dialogue_script/effects_script/Choice_effects/choice_snap_effect.gd" id="13_6naqk"]
 [ext_resource type="Script" uid="uid://o5w5t5g5q8oj" path="res://dialogue_script/effects_script/Choice_effects/choice_wobbel_effect.gd" id="14_8ajjh"]
 [ext_resource type="PackedScene" uid="uid://cevidcc5uhh41" path="res://对象/NPC们/高级效果对话.tscn" id="14_vcrkc"]
@@ -34,6 +35,9 @@
 [ext_resource type="Resource" uid="uid://bsjfkjrsgy41h" path="res://dialogues/羊妈测试对话/new_resource6.tres" id="32_5dinp"]
 [ext_resource type="Resource" uid="uid://iv14acpyolvw" path="res://dialogues/羊妈测试对话/new_resource7.tres" id="33_2et4b"]
 [ext_resource type="PackedScene" uid="uid://cfbimc6dmf6am" path="res://对象/触发对话的基类/NPC，chest/npc.tscn" id="35_b11wq"]
+[ext_resource type="AudioStream" uid="uid://dappao15dnvuh" path="res://素材/声音/Farming_Door_Close_VeryHeavy_Volume_1_3_1.wav" id="38_2et4b"]
+[ext_resource type="PackedScene" uid="uid://yumxpl15ipyo" path="res://对象/door门/具体的门/test房间的门.tscn" id="38_5dinp"]
+[ext_resource type="PackedScene" uid="uid://cp88wnlpnhjbn" path="res://对象/door门/门的脚本/交互门/interactdoor.tscn" id="38_oyqil"]
 [ext_resource type="PackedScene" uid="uid://bl4gtfhx4c56s" path="res://对象/环境叙事zone旁白/flower_zone.tscn" id="43_26vsw"]
 
 [sub_resource type="Resource" id="Resource_psmef"]
@@ -160,6 +164,7 @@ metadata/_custom_type_script = "uid://br0sgnpurqem5"
 [sub_resource type="Resource" id="Resource_lnbcs"]
 script = ExtResource("5_j4i0s")
 content = "*你好！我是二号戈多。"
+avatar = ExtResource("11_wvjs4")
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Resource_04roy"]
@@ -628,6 +633,10 @@ id = "flower"
 next_id = "flower"
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
+[sub_resource type="Resource" id="Resource_54cm4"]
+script = ExtResource("4_xg7ot")
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
 [sub_resource type="Resource" id="Resource_qxqa5"]
 script = ExtResource("5_j4i0s")
 content = "* 111111111111111111111"
@@ -655,10 +664,23 @@ script = ExtResource("4_xg7ot")
 dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_qxqa5"), SubResource("Resource_00iok")])
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
+[sub_resource type="Resource" id="Resource_2nnx4"]
+script = ExtResource("5_j4i0s")
+content = "可以给这个加一个隐藏对话框的功能，只有音效"
+effect_sound = ExtResource("38_2et4b")
+auto_continue = true
+stay_duration = 1.0
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_4l1vf"]
+script = ExtResource("4_xg7ot")
+dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_2nnx4")])
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
 [node name="Node2D" type="Node2D" unique_id=1019973989]
 
-[node name="Player" parent="." unique_id=1997236098 instance=ExtResource("1_ton2f")]
-position = Vector2(346, 217)
+[node name="Player" parent="." unique_id=1997236098 groups=["player"] instance=ExtResource("1_ton2f")]
+position = Vector2(436, 227)
 scale = Vector2(2, 2)
 
 [node name="箱子1" parent="." unique_id=152196526 instance=ExtResource("2_8gahd")]
@@ -714,9 +736,32 @@ dialogue_groups = Array[ExtResource("4_xg7ot")]([ExtResource("27_b83ri"), ExtRes
 [node name="Node2D" parent="." unique_id=1449521623 instance=ExtResource("43_26vsw")]
 position = Vector2(163, 368)
 scale = Vector2(2, 2)
-dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_rl7lv")])
+dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_rl7lv"), SubResource("Resource_54cm4")])
 
 [node name="NPC" parent="." unique_id=1234230549 instance=ExtResource("35_b11wq")]
 position = Vector2(305, 439)
 scale = Vector2(2, 2)
 dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_4xl2j")])
+
+[node name="NPC2" parent="." unique_id=1497255856 instance=ExtResource("35_b11wq")]
+position = Vector2(202, 98)
+dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_4l1vf")])
+
+[node name="Door2" parent="." unique_id=1732229786 instance=ExtResource("38_oyqil")]
+position = Vector2(362, 264)
+scale = Vector2(2.5, 2.5)
+target_scene = "uid://bvjfunlbknh4d"
+spawn_target = "Aroom_spawn_point"
+
+[node name="Troom_spawn_point" type="Marker2D" parent="Door2" unique_id=1334806102]
+position = Vector2(-21.999992, 5.2000046)
+scale = Vector2(0.39999998, 0.39999998)
+
+[node name="Door" parent="." unique_id=1713148592 instance=ExtResource("38_5dinp")]
+position = Vector2(278, 68.000015)
+scale = Vector2(2.5, 2.5)
+target_scene = "uid://bvjfunlbknh4d"
+spawn_target = "Marker2D2"
+
+[node name="Marker2D3" type="Marker2D" parent="Door" unique_id=1872308849]
+position = Vector2(-17.999998, -0.4000061)

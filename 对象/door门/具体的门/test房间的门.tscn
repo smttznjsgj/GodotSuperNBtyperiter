@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://yumxpl15ipyo"]
+
+[ext_resource type="Script" uid="uid://v3d3yag10opk" path="res://对象/door门/门的脚本/自动门/autodoor.gd" id="1_n4cq3"]
+[ext_resource type="Texture2D" uid="uid://cqp06ul8mxss8" path="res://对象/door门/门.png" id="2_4lq13"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upfed"]
+size = Vector2(20, 23)
+
+[node name="Door" type="Area2D" unique_id=1732229786]
+script = ExtResource("1_n4cq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49409982]
+modulate = Color(1, 1, 1, 0.3254902)
+z_index = 1
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_upfed")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=225529193]
+texture_filter = 1
+position = Vector2(0, -5.4999995)
+scale = Vector2(1, 0.775)
+texture = ExtResource("2_4lq13")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=993849604]
+position = Vector2(25, -2)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=748714484]

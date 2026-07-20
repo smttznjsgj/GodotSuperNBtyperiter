@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://cfbimc6dmf6am"]
+[gd_scene format=3 uid="uid://gos4eovmxidm"]
 
-[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_lcj77"]
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_ucxte"]
+[ext_resource type="Texture2D" uid="uid://cc86i26y1ivtk" path="res://icon.svg" id="2_vudba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
 size = Vector2(17.929482, 28.61296)
@@ -9,15 +10,16 @@ size = Vector2(17.929482, 28.61296)
 size = Vector2(44, 33)
 
 [node name="NPC" type="StaticBody2D" unique_id=666820554]
-script = ExtResource("1_lcj77")
+script = ExtResource("1_ucxte")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979832529]
 texture_filter = 1
 scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_vudba")
 
 [node name="物理层red" type="CollisionShape2D" parent="." unique_id=43550759]
 z_index = 2
-position = Vector2(-0.49999928, -0.5)
+position = Vector2(2.3841858e-07, -0.5)
 scale = Vector2(1.1154813, 0.6640347)
 shape = SubResource("RectangleShape2D_trlyu")
 debug_color = Color(0.99396795, 0, 0.23658371, 0.41960785)
