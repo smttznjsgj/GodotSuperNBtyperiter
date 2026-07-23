@@ -26,3 +26,5 @@ texture_filter = 1
 texture = ExtResource("2_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=30532817]
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=827549162]

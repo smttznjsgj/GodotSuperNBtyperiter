@@ -11,12 +11,19 @@ extends StaticBody2D
 @export var item : Array
 @export var sound : Resource
 
+@export_group("NormalAction")
+@export var idle : Array[String]
+@export_group("EventAction")
+@export var Event : Array[Action] 
+
 var current_group_id: String = ""
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	if dialogue_groups.size() > 0:
 		current_group_id = dialogue_groups[0].id
 	Global.dialogue_broadcast.connect(_on_broadcast)
+	Global.dialogue_line_reached.connect(_on_line_reached)
 func interact() -> void:
 	if DialogueUI.container.visible:
 		return
@@ -26,6 +33,9 @@ func interact() -> void:
 		DialogueUI.dialogue_finished.connect(_on_dialogue_finished, CONNECT_ONE_SHOT)
 		DialogueUI.dialogue_continue.connect(_on_dialogue_continue, CONNECT_ONE_SHOT)
 func _on_dialogue_finished() -> void:
+	if only_once:
+		queue_free()
+		return
 	if DialogueUI.dialogue_continue.is_connected(_on_dialogue_continue):
 		DialogueUI.dialogue_continue.disconnect(_on_dialogue_continue)
 func _on_dialogue_continue() -> void:
@@ -60,3 +70,8 @@ func _check_flags(flag_str: String) -> bool:
 		if not Global.has_flag(f.strip_edges()):
 			return false
 	return true
+func _on_line_reached(group_id: String, line_index: int) -> void:
+	for action in Event:
+		if action.dialogue_id == group_id and action.line_index == line_index:
+			if action.animation_name != "" and has_node("AnimationPlayer"):
+				animation_player.play(action.animation_name)

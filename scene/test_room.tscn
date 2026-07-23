@@ -35,9 +35,12 @@
 [ext_resource type="Resource" uid="uid://bsjfkjrsgy41h" path="res://dialogues/羊妈测试对话/new_resource6.tres" id="32_5dinp"]
 [ext_resource type="Resource" uid="uid://iv14acpyolvw" path="res://dialogues/羊妈测试对话/new_resource7.tres" id="33_2et4b"]
 [ext_resource type="PackedScene" uid="uid://cfbimc6dmf6am" path="res://对象/触发对话的基类/NPC，chest/npc.tscn" id="35_b11wq"]
-[ext_resource type="AudioStream" uid="uid://dappao15dnvuh" path="res://素材/声音/Farming_Door_Close_VeryHeavy_Volume_1_3_1.wav" id="38_2et4b"]
+[ext_resource type="AudioStream" uid="uid://b7lqfkuan2lwm" path="res://素材/门声/Farming_Door_Open_Volume_1_1_1.wav" id="37_nw8nw"]
 [ext_resource type="PackedScene" uid="uid://yumxpl15ipyo" path="res://对象/door门/具体的门/test房间的门.tscn" id="38_5dinp"]
 [ext_resource type="PackedScene" uid="uid://cp88wnlpnhjbn" path="res://对象/door门/门的脚本/交互门/interactdoor.tscn" id="38_oyqil"]
+[ext_resource type="AudioStream" uid="uid://d3fxqgmmtkxgp" path="res://素材/门声/Farming_Door_Close_Medium_Volume_1_2_2.wav" id="40_nw8nw"]
+[ext_resource type="AudioStream" uid="uid://56or58hb2g0j" path="res://素材/门声/Farming_Door_Open_Volume_1_1_2.wav" id="40_r57xy"]
+[ext_resource type="Script" uid="uid://byybnjrs7alwr" path="res://对象/door门/门的脚本/切换shader/transition_data.gd" id="41_nw8nw"]
 [ext_resource type="PackedScene" uid="uid://bl4gtfhx4c56s" path="res://对象/环境叙事zone旁白/flower_zone.tscn" id="43_26vsw"]
 
 [sub_resource type="Resource" id="Resource_psmef"]
@@ -456,6 +459,7 @@ metadata/_custom_type_script = "uid://erbvo1gibc3o"
 script = ExtResource("5_j4i0s")
 content = "*（摇晃效果摇晃效果摇晃效果摇晃效果摇晃效果摇晃效果）"
 effect = Array[ExtResource("6_sbee0")]([SubResource("Resource_gsaes")])
+dialogue_opacity = 0.0
 position_up = true
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
@@ -501,6 +505,7 @@ script = ExtResource("5_j4i0s")
 content = "*摇摆摇摆摇摆摇摆！"
 effect = Array[ExtResource("6_sbee0")]([SubResource("Resource_wst0w")])
 persist_effects = true
+dialogue_opacity = 0.25
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Resource_acii5"]
@@ -666,8 +671,8 @@ metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
 [sub_resource type="Resource" id="Resource_2nnx4"]
 script = ExtResource("5_j4i0s")
-content = "可以给这个加一个隐藏对话框的功能，只有音效"
-effect_sound = ExtResource("38_2et4b")
+content = ""
+effect_sound = ExtResource("37_nw8nw")
 auto_continue = true
 stay_duration = 1.0
 metadata/_custom_type_script = "uid://c06clw1acxak"
@@ -676,6 +681,13 @@ metadata/_custom_type_script = "uid://c06clw1acxak"
 script = ExtResource("4_xg7ot")
 dialogue_list = Array[ExtResource("5_j4i0s")]([SubResource("Resource_2nnx4")])
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
+[sub_resource type="Resource" id="Resource_5hbtc"]
+script = ExtResource("41_nw8nw")
+open_sound = ExtResource("40_r57xy")
+close_sound = ExtResource("40_nw8nw")
+fade_time = 0.0
+metadata/_custom_type_script = "uid://byybnjrs7alwr"
 
 [node name="Node2D" type="Node2D" unique_id=1019973989]
 
@@ -737,6 +749,7 @@ dialogue_groups = Array[ExtResource("4_xg7ot")]([ExtResource("27_b83ri"), ExtRes
 position = Vector2(163, 368)
 scale = Vector2(2, 2)
 dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_rl7lv"), SubResource("Resource_54cm4")])
+only_once = true
 
 [node name="NPC" parent="." unique_id=1234230549 instance=ExtResource("35_b11wq")]
 position = Vector2(305, 439)
@@ -758,10 +771,11 @@ position = Vector2(-21.999992, 5.2000046)
 scale = Vector2(0.39999998, 0.39999998)
 
 [node name="Door" parent="." unique_id=1713148592 instance=ExtResource("38_5dinp")]
-position = Vector2(278, 68.000015)
+position = Vector2(277, 67.000015)
 scale = Vector2(2.5, 2.5)
 target_scene = "uid://bvjfunlbknh4d"
 spawn_target = "Marker2D2"
+transition_data = SubResource("Resource_5hbtc")
 
 [node name="Marker2D3" type="Marker2D" parent="Door" unique_id=1872308849]
 position = Vector2(-17.999998, -0.4000061)

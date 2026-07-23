@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="动画代办，门房间跳转代办"
+config/name="动画/event系统代办"
 run/main_scene="uid://cjnsuqg5xl3uj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"

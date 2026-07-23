@@ -28,6 +28,9 @@ class_name Dialogue
 ## 效果跨句延续：true=快进不打断摇晃，false=效果结束后才允许推进下一句，针对效果比较长的对话，如果为false，则在对话结束后按下快进，先归位结束效果。ps.如果想制作那种比较长的效果，请把count调一个雷霆大数，确保其一时半会不会停
 @export var persist_effects: bool = false
 @export_group("环境叙事")
+##切记一定要搭配后面的使用，记得清空文字内容，或者把打字音效关掉
+##对话框整体透明度，0=全透明（不可见但功能正常运行），1=完全不透明（默认）
+@export_range(0.0, 1.0, 0.01) var dialogue_opacity: float = 1.0
 #让对话框出现在顶部
 @export var position_up : bool = false
 #能否在对话结束之前跳过，默认可以跳过

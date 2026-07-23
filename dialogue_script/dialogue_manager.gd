@@ -111,6 +111,9 @@ func display_next_dialogue() -> void:
 		_finish_dialogue()
 		return
 	var dialogue := main_dialogue.dialogue_list[dialogue_index]
+	Global.dialogue_line_reached.emit(main_dialogue.id, dialogue_index) 
+	print(main_dialogue.id,",",dialogue_index) 
+	container.modulate.a = dialogue.dialogue_opacity
 	var processed_content = dialogue.content.replace("{name}", Global.player.player_name)
 	if dialogue.position_up and not _ui_at_top:
 		_move_ui_to_top()
@@ -268,6 +271,7 @@ func _finish_dialogue(skip_broadcast: bool = false) -> void:
 	
 	dialogue_finished.emit()
 func _show_choices(group: DialogueGroup) -> void:
+	container.modulate.a = 1.0
 	left_avatar.texture = null
 	right_avatar.texture = null
 	character_name_text.text = ""
@@ -520,6 +524,7 @@ func start_dialogue(group: DialogueGroup) -> void:
 	container.position = Vector2.ZERO
 	container.rotation_degrees = 0.0
 	main_dialogue = group
+	container.modulate.a = 1.0
 	dialogue_index = 0
 	current_choice_index = 0
 	container.visible = true

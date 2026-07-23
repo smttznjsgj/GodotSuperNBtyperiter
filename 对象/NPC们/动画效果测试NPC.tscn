@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://brerk5bsqxe2p"]
+
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_0fq04"]
+[ext_resource type="Script" uid="uid://csasqy50o02oj" path="res://EventSystem/Action_data.gd" id="2_7s31g"]
+[ext_resource type="Texture2D" uid="uid://cc86i26y1ivtk" path="res://icon.svg" id="3_kqbuv"]
+
+[sub_resource type="Resource" id="Resource_j0u1a"]
+script = ExtResource("2_7s31g")
+dialogue_id = "animation"
+animation_name = "拉伸Y轴"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_0fq04"]
+script = ExtResource("2_7s31g")
+dialogue_id = "animation"
+line_index = 1
+animation_name = "拉伸Y轴"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
+size = Vector2(17.929482, 28.61296)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7mpe"]
+size = Vector2(19, 19)
+
+[sub_resource type="Animation" id="Animation_0fq04"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15, 0.15)]
+}
+
+[sub_resource type="Animation" id="Animation_310m4"]
+resource_name = "拉伸"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.15, 0.15), Vector2(0.12, 0.157), Vector2(0.155, 0.14), Vector2(0.145, 0.155), Vector2(0.15, 0.15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkxkq"]
+_data = {
+&"RESET": SubResource("Animation_0fq04"),
+&"拉伸Y轴": SubResource("Animation_310m4")
+}
+
+[node name="NPC" type="StaticBody2D" unique_id=666820554]
+script = ExtResource("1_0fq04")
+idle = Array[String](["", ""])
+Event = Array[ExtResource("2_7s31g")]([SubResource("Resource_j0u1a"), SubResource("Resource_0fq04")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979832529]
+texture_filter = 1
+position = Vector2(0, -0.20000052)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_kqbuv")
+
+[node name="物理层red" type="CollisionShape2D" parent="." unique_id=43550759]
+z_index = 2
+position = Vector2(-0.49999928, -0.5)
+scale = Vector2(1.1154813, 0.6640347)
+shape = SubResource("RectangleShape2D_trlyu")
+debug_color = Color(0.99396795, 0, 0.23658371, 0.41960785)
+
+[node name="射线检测层blue" type="Area2D" parent="." unique_id=1872116843]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="射线检测层blue" unique_id=1652434430]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_x7mpe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=463403333]
+libraries/ = SubResource("AnimationLibrary_fkxkq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1139098153]

@@ -29,6 +29,9 @@ func _on_body_entered(body: Node2D) -> void:
 		DialogueUI.start_dialogue(group)
 		DialogueUI.dialogue_finished.connect(_on_dialogue_finished, CONNECT_ONE_SHOT)
 func _on_dialogue_finished() -> void:
+	if only_once:
+		queue_free()
+		return
 	if DialogueUI.dialogue_continue.is_connected(_on_dialogue_continue):
 		DialogueUI.dialogue_continue.disconnect(_on_dialogue_continue)
 func _on_dialogue_continue() -> void:

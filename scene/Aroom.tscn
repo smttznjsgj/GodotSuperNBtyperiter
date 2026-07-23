@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://d3fxqgmmtkxgp" path="res://素材/门声/Farming_Door_Close_Medium_Volume_1_2_2.wav" id="11_0jy5m"]
 [ext_resource type="AudioStream" uid="uid://56or58hb2g0j" path="res://素材/门声/Farming_Door_Open_Volume_1_1_2.wav" id="11_d6gwx"]
 [ext_resource type="Script" uid="uid://byybnjrs7alwr" path="res://对象/door门/门的脚本/切换shader/transition_data.gd" id="13_icejk"]
+[ext_resource type="PackedScene" uid="uid://brerk5bsqxe2p" path="res://对象/NPC们/动画效果测试NPC.tscn" id="15_icejk"]
 
 [sub_resource type="Resource" id="Resource_0hwwp"]
 script = ExtResource("5_pa6du")
@@ -40,6 +41,23 @@ open_sound = ExtResource("11_d6gwx")
 close_sound = ExtResource("11_0jy5m")
 color = Color(0, 0.26666668, 0, 1)
 metadata/_custom_type_script = "uid://byybnjrs7alwr"
+
+[sub_resource type="Resource" id="Resource_3im3h"]
+script = ExtResource("5_pa6du")
+content = "* 你好！你看！"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_viokw"]
+script = ExtResource("5_pa6du")
+content = "* 我会duangduang地弹耶！"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_rie15"]
+script = ExtResource("2_klt63")
+dialogue_list = Array[ExtResource("5_pa6du")]([SubResource("Resource_3im3h"), SubResource("Resource_viokw")])
+id = "animation"
+next_id = "animation"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
 [node name="小地图" type="Node2D" unique_id=1568773970]
 
@@ -71,3 +89,8 @@ transition_data = SubResource("Resource_icejk")
 
 [node name="Marker2D2" type="Marker2D" parent="Door" unique_id=1147865101]
 position = Vector2(16.8, 0)
+
+[node name="NPC2" parent="." unique_id=825757453 instance=ExtResource("15_icejk")]
+position = Vector2(221, 212)
+scale = Vector2(3, 3)
+dialogue_groups = Array[ExtResource("2_klt63")]([SubResource("Resource_rie15")])

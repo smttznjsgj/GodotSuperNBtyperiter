@@ -4,7 +4,7 @@ var can_act : bool = true
 var player : PlayerData
 
 signal dialogue_broadcast(next_id: String)
-
+signal dialogue_line_reached(group_id: String, line_index: int)
 var pending_spawn_pos: Vector2 = Vector2.ZERO
 var flags: Dictionary = {}
 
