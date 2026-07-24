@@ -1,6 +1,9 @@
 class_name Player
 extends CharacterBody2D
-
+##初始动画判断朝向，设置了一些常用的
+@export_enum("idle_forward", "idle_back", "idle_left", "idle_right")  var start_anim: String = "idle_forward"
+##特殊起始动画，若其不为空，则顶替掉上面的四个选项的start_anim
+@export var special_start_anim: String = ""
 @export_group("NormalAction")
 @export var idle : Array[String]
 @export_group("DialogueAction")
@@ -13,7 +16,8 @@ extends CharacterBody2D
 
 var last_direction := Vector2.RIGHT
 var ray_length: int = 45
-
+var _anim_locked: bool = true
+var _current_anim: String = "idle_forward"
 const SPEED = 300.0
 
 func _physics_process(delta: float) -> void:
@@ -22,11 +26,16 @@ func _physics_process(delta: float) -> void:
 	
 	var input_dir :=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	if input_dir != Vector2.ZERO:
+		_anim_locked = false
 		last_direction = input_dir
 		ray_cast_2d.target_position = input_dir * ray_length
-		animated_sprite.play(_get_direction_name("move_"))
+		_current_anim = _get_direction_name("move_")
+	elif _anim_locked :
+		pass
 	else:
-		animated_sprite.play(_get_direction_name("idle_"))
+		_current_anim = _get_direction_name("idle_")
+	if _current_anim != animated_sprite.animation:
+		animated_sprite.play(_current_anim)
 	var direction_x := Input.get_axis("ui_left", "ui_right")
 	var direction_y := Input.get_axis("ui_up", "ui_down")
 	if direction_x:
@@ -59,6 +68,15 @@ func _get_direction_name(prefix: String) -> String:
 	else:
 		return prefix + ("back" if last_direction.y < 0 else "forward")
 func _ready() -> void:
+	if special_start_anim != "":
+		start_anim = special_start_anim
+	if Global.pending_exit_animation and Global.pending_exit_animation != "idle_forward":
+		_current_anim = Global.pending_exit_animation
+	else:
+		_current_anim = start_anim
+	animated_sprite.play(_current_anim)
+	_anim_locked = true
+	Global.pending_exit_animation = "idle_forward"
 	Global.dialogue_line_reached.connect(_on_line_reached)
 	add_to_group("player")
 	print("spawn pos: ", Global.pending_spawn_pos)

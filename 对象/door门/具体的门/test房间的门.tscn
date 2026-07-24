@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yumxpl15ipyo"]
 
-[ext_resource type="Script" uid="uid://v3d3yag10opk" path="res://对象/door门/门的脚本/自动门/autodoor.gd" id="1_n4cq3"]
+[ext_resource type="Script" uid="uid://v3d3yag10opk" path="res://对象/door门/门的脚本/Door.gd" id="1_n4cq3"]
 [ext_resource type="Texture2D" uid="uid://cqp06ul8mxss8" path="res://对象/door门/门.png" id="2_4lq13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upfed"]

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cs08wx8rjlacg"]
+
+[ext_resource type="AudioStream" uid="uid://d3fxqgmmtkxgp" path="res://素材/门声/Farming_Door_Close_Medium_Volume_1_2_2.wav" id="1_klw84"]
+[ext_resource type="AudioStream" uid="uid://56or58hb2g0j" path="res://素材/门声/Farming_Door_Open_Volume_1_1_2.wav" id="2_52iwp"]
+[ext_resource type="Script" uid="uid://byybnjrs7alwr" path="res://对象/door门/门的脚本/切换shader/transition_data.gd" id="3_wnpva"]
+[ext_resource type="Texture2D" uid="uid://cqp06ul8mxss8" path="res://对象/door门/门.png" id="4_ur574"]
+
+[sub_resource type="GDScript" id="GDScript_dwlcm"]
+script/source = "extends Area2D
+
+@export_file(\"*.tscn\") var target_scene : String = \"\"
+@export var spawn_target : String = \"\"
+@export var transition_data: TransitionData
+@export var exit_animation: String = \"idle_forward\"
+var _trigger = false
+func _unhandled_input(event: InputEvent) -> void:
+	if _trigger == true :
+		return
+	if not event.is_action_pressed(\"interact\"):
+		return
+	if not is_player_near():
+		return
+	Global.pending_exit_animation = exit_animation
+	await SceneTransition.go_to(target_scene,spawn_target,transition_data)
+		
+		
+
+func is_player_near():
+	for body in get_overlapping_bodies():
+		if body.is_in_group(\"player\"):
+			return true
+	return false
+"
+
+[sub_resource type="Resource" id="Resource_yoei2"]
+script = ExtResource("3_wnpva")
+open_sound = ExtResource("2_52iwp")
+close_sound = ExtResource("1_klw84")
+color = Color(0.44822615, 0, 0.019313041, 1)
+metadata/_custom_type_script = "uid://byybnjrs7alwr"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upfed"]
+size = Vector2(20, 23)
+
+[node name="Door" type="Area2D" unique_id=1732229786]
+script = SubResource("GDScript_dwlcm")
+target_scene = "<null>"
+transition_data = SubResource("Resource_yoei2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49409982]
+modulate = Color(1, 1, 1, 0.3254902)
+z_index = 1
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_upfed")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=225529193]
+texture_filter = 1
+position = Vector2(0, -5.4999995)
+scale = Vector2(1, 0.775)
+texture = ExtResource("4_ur574")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=993849604]
+position = Vector2(0, 14)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=748714484]

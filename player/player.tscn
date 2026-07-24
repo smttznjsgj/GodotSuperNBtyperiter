@@ -199,6 +199,7 @@ _data = {
 [node name="Player" type="CharacterBody2D" unique_id=1997236098]
 top_level = true
 script = ExtResource("1_onrkg")
+_current_anim = "idle_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123172360]
 position = Vector2(0, 13.999999)
@@ -220,7 +221,7 @@ texture = ExtResource("2_rkbax")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=795888020]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_bjvpn")
-animation = &"move_right"
+animation = &"idle_forward"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1008378802]
 libraries/ = SubResource("AnimationLibrary_hg6s5")

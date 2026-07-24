@@ -37,7 +37,6 @@
 [ext_resource type="PackedScene" uid="uid://cfbimc6dmf6am" path="res://对象/触发对话的基类/NPC，chest/npc.tscn" id="35_b11wq"]
 [ext_resource type="AudioStream" uid="uid://b7lqfkuan2lwm" path="res://素材/门声/Farming_Door_Open_Volume_1_1_1.wav" id="37_nw8nw"]
 [ext_resource type="PackedScene" uid="uid://yumxpl15ipyo" path="res://对象/door门/具体的门/test房间的门.tscn" id="38_5dinp"]
-[ext_resource type="PackedScene" uid="uid://cp88wnlpnhjbn" path="res://对象/door门/门的脚本/交互门/interactdoor.tscn" id="38_oyqil"]
 [ext_resource type="AudioStream" uid="uid://d3fxqgmmtkxgp" path="res://素材/门声/Farming_Door_Close_Medium_Volume_1_2_2.wav" id="40_nw8nw"]
 [ext_resource type="AudioStream" uid="uid://56or58hb2g0j" path="res://素材/门声/Farming_Door_Open_Volume_1_1_2.wav" id="40_r57xy"]
 [ext_resource type="Script" uid="uid://byybnjrs7alwr" path="res://对象/door门/门的脚本/切换shader/transition_data.gd" id="41_nw8nw"]
@@ -692,8 +691,9 @@ metadata/_custom_type_script = "uid://byybnjrs7alwr"
 [node name="Node2D" type="Node2D" unique_id=1019973989]
 
 [node name="Player" parent="." unique_id=1997236098 groups=["player"] instance=ExtResource("1_ton2f")]
-position = Vector2(436, 227)
+position = Vector2(436, 228)
 scale = Vector2(2, 2)
+start_anim = "idle_left"
 
 [node name="箱子1" parent="." unique_id=152196526 instance=ExtResource("2_8gahd")]
 position = Vector2(511, 135)
@@ -760,22 +760,22 @@ dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_4xl2j")])
 position = Vector2(202, 98)
 dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_4l1vf")])
 
-[node name="Door2" parent="." unique_id=1732229786 instance=ExtResource("38_oyqil")]
-position = Vector2(362, 264)
+[node name="门_2_1" parent="." unique_id=1713148592 instance=ExtResource("38_5dinp")]
+position = Vector2(366.00003, 252)
 scale = Vector2(2.5, 2.5)
 target_scene = "uid://bvjfunlbknh4d"
-spawn_target = "Aroom_spawn_point"
+spawn_target = "Marker2D5"
+transition_data = SubResource("Resource_5hbtc")
 
-[node name="Troom_spawn_point" type="Marker2D" parent="Door2" unique_id=1334806102]
-position = Vector2(-21.999992, 5.2000046)
-scale = Vector2(0.39999998, 0.39999998)
+[node name="Marker2D3" type="Marker2D" parent="门_2_1" unique_id=1872308849]
+position = Vector2(17.19998, 3.5999968)
 
-[node name="Door" parent="." unique_id=1713148592 instance=ExtResource("38_5dinp")]
-position = Vector2(277, 67.000015)
+[node name="门_1_1" parent="." unique_id=1732229786 instance=ExtResource("38_5dinp")]
+position = Vector2(592.00006, 444.00003)
 scale = Vector2(2.5, 2.5)
 target_scene = "uid://bvjfunlbknh4d"
 spawn_target = "Marker2D2"
 transition_data = SubResource("Resource_5hbtc")
 
-[node name="Marker2D3" type="Marker2D" parent="Door" unique_id=1872308849]
-position = Vector2(-17.999998, -0.4000061)
+[node name="Marker2D4" type="Marker2D" parent="门_1_1" unique_id=1982853140]
+position = Vector2(-16.799997, 3.1999938)

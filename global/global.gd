@@ -6,6 +6,7 @@ var player : PlayerData
 signal dialogue_broadcast(next_id: String)
 signal dialogue_line_reached(group_id: String, line_index: int)
 var pending_spawn_pos: Vector2 = Vector2.ZERO
+var pending_exit_animation: String = ""
 var flags: Dictionary = {}
 
 func _ready() -> void:

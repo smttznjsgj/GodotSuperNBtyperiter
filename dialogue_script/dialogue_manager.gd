@@ -248,8 +248,8 @@ func display_next_dialogue() -> void:
 		left_avatar.texture = dialogue.avatar
 		avatar_left_panel.custom_minimum_size.x = 200 if dialogue.avatar else 0
 		right_avatar.texture = dialogue.avatar_right
-		avatar_right_panel.custom_minimum_size.x = 200 if dialogue.avatar_right else 0
-	#
+		#avatar_right_panel.custom_minimum_size.x = 200 if dialogue.avatar_right else 0
+	#	#不需要再占位开辟空间了，自己写对话的时候提前回车就用不着这样。遵循正交最简设计原则。不是技术性问题
 #func _finish_dialogue() -> void:
 	#persistent_effect_running = false
 	#container.position = Vector2.ZERO

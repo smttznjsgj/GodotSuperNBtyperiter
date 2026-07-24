@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_clbfn"]
 [ext_resource type="Texture2D" uid="uid://cc86i26y1ivtk" path="res://icon.svg" id="6_u24po"]
 [ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="7_0jy5m"]
-[ext_resource type="PackedScene" uid="uid://cp88wnlpnhjbn" path="res://对象/door门/门的脚本/交互门/interactdoor.tscn" id="10_0jy5m"]
 [ext_resource type="PackedScene" uid="uid://cuvshhhgpm3bf" path="res://对象/door门/具体的门/A房间的门.tscn" id="10_clbfn"]
 [ext_resource type="PackedScene" uid="uid://ct4fqe3jg1yoh" path="res://player/player.tscn" id="10_pa6du"]
 [ext_resource type="AudioStream" uid="uid://d3fxqgmmtkxgp" path="res://素材/门声/Farming_Door_Close_Medium_Volume_1_2_2.wav" id="11_0jy5m"]
@@ -23,8 +22,10 @@
 
 [sub_resource type="Resource" id="Resource_0hwwp"]
 script = ExtResource("5_pa6du")
-content = "* 欢迎来到测试房间testAroom ！"
+content = "* 欢迎来到测试房间
+  testAroom ！"
 avatar = ExtResource("6_u24po")
+avatar_right = ExtResource("6_u24po")
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Resource_d6gwx"]
@@ -40,12 +41,6 @@ dialogue_id = "animation"
 line_index = 10
 animation_name = "摄像机动画示例"
 metadata/_custom_type_script = "uid://csasqy50o02oj"
-
-[sub_resource type="Resource" id="Resource_3cnoe"]
-script = ExtResource("13_icejk")
-open_sound = ExtResource("11_d6gwx")
-close_sound = ExtResource("11_0jy5m")
-metadata/_custom_type_script = "uid://byybnjrs7alwr"
 
 [sub_resource type="Resource" id="Resource_icejk"]
 script = ExtResource("13_icejk")
@@ -134,6 +129,7 @@ metadata/_custom_type_script = "uid://c06clw1acxak"
 [sub_resource type="Resource" id="Resource_i0p6k"]
 script = ExtResource("5_pa6du")
 content = "* 您给路大哟！吼吼吼！"
+avatar_right = ExtResource("6_u24po")
 effect_sound = ExtResource("18_7tifo")
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
@@ -209,26 +205,28 @@ position = Vector2(102, 131)
 scale = Vector2(2, 2)
 ActionGroup = Array[ExtResource("16_3cnoe")]([SubResource("Resource_lm30c")])
 
-[node name="Door2" parent="." unique_id=1732229786 instance=ExtResource("10_0jy5m")]
-position = Vector2(13.000001, 105)
+[node name="门_1_2" parent="." unique_id=15484042 instance=ExtResource("10_clbfn")]
+position = Vector2(304.00003, 274)
 scale = Vector2(2.5, 2.5)
 target_scene = "uid://cjnsuqg5xl3uj"
-spawn_target = "Troom_spawn_point"
-transition_data = SubResource("Resource_3cnoe")
+spawn_target = "Marker2D4"
+transition_data = SubResource("Resource_icejk")
+auto_trigger = false
 
-[node name="Aroom_spawn_point" type="Marker2D" parent="Door2" unique_id=1097422223]
-position = Vector2(-25.199999, 2.4000015)
-scale = Vector2(0.39999998, 0.39999998)
+[node name="Marker2D2" type="Marker2D" parent="门_1_2" unique_id=1147865101]
+position = Vector2(-17.199997, 6.000012)
 
-[node name="Door" parent="." unique_id=15484042 instance=ExtResource("10_clbfn")]
-position = Vector2(197, 83)
+[node name="门_2_2" parent="." unique_id=1732229786 instance=ExtResource("10_clbfn")]
+position = Vector2(28.999998, 56.000004)
 scale = Vector2(2.5, 2.5)
 target_scene = "uid://cjnsuqg5xl3uj"
 spawn_target = "Marker2D3"
 transition_data = SubResource("Resource_icejk")
+exit_animation = "idle_left"
+auto_trigger = false
 
-[node name="Marker2D2" type="Marker2D" parent="Door" unique_id=1147865101]
-position = Vector2(16.8, 0)
+[node name="Marker2D5" type="Marker2D" parent="门_2_2" unique_id=1581973065]
+position = Vector2(15.599999, 5.599998)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=2105878296]
 position = Vector2(121, 205)
