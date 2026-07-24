@@ -1,8 +1,15 @@
 class_name Player
 extends CharacterBody2D
 
+@export_group("NormalAction")
+@export var idle : Array[String]
+@export_group("DialogueAction")
+@export var ActionGroup : Array[Action] 
+
 
 @onready var ray_cast_2d: RayCast2D = $Raycast2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var last_direction := Vector2.RIGHT
 var ray_length: int = 45
@@ -17,7 +24,9 @@ func _physics_process(delta: float) -> void:
 	if input_dir != Vector2.ZERO:
 		last_direction = input_dir
 		ray_cast_2d.target_position = input_dir * ray_length
-	
+		animated_sprite.play(_get_direction_name("move_"))
+	else:
+		animated_sprite.play(_get_direction_name("idle_"))
 	var direction_x := Input.get_axis("ui_left", "ui_right")
 	var direction_y := Input.get_axis("ui_up", "ui_down")
 	if direction_x:
@@ -44,15 +53,24 @@ func _input(event: InputEvent) -> void:
 			if target.has_method("interact"):
 				target.interact()
 				get_viewport().set_input_as_handled()
-
+func _get_direction_name(prefix: String) -> String:
+	if abs(last_direction.x) > abs(last_direction.y):
+		return prefix + ("left" if last_direction.x < 0 else "right")
+	else:
+		return prefix + ("back" if last_direction.y < 0 else "forward")
 func _ready() -> void:
+	Global.dialogue_line_reached.connect(_on_line_reached)
 	add_to_group("player")
 	print("spawn pos: ", Global.pending_spawn_pos)
 	if Global.pending_spawn_pos != Vector2.ZERO:
 		global_position = Global.pending_spawn_pos
 		Global.pending_spawn_pos = Vector2.ZERO
 	
-
+func _on_line_reached(group_id: String, line_index: int) -> void:
+	for action in ActionGroup:
+		if action.dialogue_id == group_id and action.line_index == line_index:
+			if action.animation_name != "" and has_node("AnimationPlayer"):
+				animation_player.play(action.animation_name)
 
 
 

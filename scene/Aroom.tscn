@@ -14,7 +14,12 @@
 [ext_resource type="AudioStream" uid="uid://d3fxqgmmtkxgp" path="res://素材/门声/Farming_Door_Close_Medium_Volume_1_2_2.wav" id="11_0jy5m"]
 [ext_resource type="AudioStream" uid="uid://56or58hb2g0j" path="res://素材/门声/Farming_Door_Open_Volume_1_1_2.wav" id="11_d6gwx"]
 [ext_resource type="Script" uid="uid://byybnjrs7alwr" path="res://对象/door门/门的脚本/切换shader/transition_data.gd" id="13_icejk"]
-[ext_resource type="PackedScene" uid="uid://brerk5bsqxe2p" path="res://对象/NPC们/动画效果测试NPC.tscn" id="15_icejk"]
+[ext_resource type="PackedScene" uid="uid://brerk5bsqxe2p" path="res://对象/NPC们/动画效果测试NPC1.tscn" id="15_icejk"]
+[ext_resource type="Script" uid="uid://csasqy50o02oj" path="res://EventSystem/Action_data.gd" id="16_3cnoe"]
+[ext_resource type="AudioStream" uid="uid://cwfk6muy3ytbp" path="res://素材/44_1kHz-16bit/03_Short_Tonal_Sfx/Grp01_1_Retro_8_Bit_Chiptune.wav" id="16_3im3h"]
+[ext_resource type="AudioStream" uid="uid://dbk148j1vj4c0" path="res://素材/小钢琴溜走音效.mp3" id="18_7tifo"]
+[ext_resource type="AudioStream" uid="uid://dp2y1lelue8fj" path="res://素材/44_1kHz-16bit/8Bit_Renders/Hit_Impact_9_Retro_8_Bit_Chiptune.wav" id="18_rie15"]
+[ext_resource type="AudioStream" uid="uid://e88ixqv40ik1" path="res://素材/44_1kHz-16bit/04_Mixed_Sfx/Cartoon_2.wav" id="18_s1sr3"]
 
 [sub_resource type="Resource" id="Resource_0hwwp"]
 script = ExtResource("5_pa6du")
@@ -28,6 +33,13 @@ dialogue_list = Array[ExtResource("5_pa6du")]([SubResource("Resource_0hwwp")])
 id = "Aroom1"
 next_id = "Aroom1"
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
+[sub_resource type="Resource" id="Resource_lm30c"]
+script = ExtResource("16_3cnoe")
+dialogue_id = "animation"
+line_index = 10
+animation_name = "摄像机动画示例"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
 
 [sub_resource type="Resource" id="Resource_3cnoe"]
 script = ExtResource("13_icejk")
@@ -44,20 +56,147 @@ metadata/_custom_type_script = "uid://byybnjrs7alwr"
 
 [sub_resource type="Resource" id="Resource_3im3h"]
 script = ExtResource("5_pa6du")
-content = "* 你好！你看！"
+content = "* 你好！我系戈多啊！
+  最近学会了点新东西！"
+avatar = ExtResource("6_u24po")
+effect_sound = ExtResource("16_3im3h")
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Resource_viokw"]
 script = ExtResource("5_pa6du")
 content = "* 我会duangduang地弹耶！"
+avatar = ExtResource("6_u24po")
+effect_sound = ExtResource("16_3im3h")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_hpkci"]
+script = ExtResource("5_pa6du")
+content = "* 什么？你没看清？"
+avatar = ExtResource("6_u24po")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_6fmce"]
+script = ExtResource("5_pa6du")
+content = "* 我把对话框给你关了，
+  然后我使劲弹一下。"
+avatar = ExtResource("6_u24po")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_6dsnu"]
+script = ExtResource("5_pa6du")
+content = ""
+avatar = ExtResource("6_u24po")
+effect_sound = ExtResource("16_3im3h")
+dialogue_opacity = 0.0
+stay_duration = 0.5
+hide_end_hint = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_fpdbl"]
+script = ExtResource("5_pa6du")
+content = "* 除了DuangDuang地弹，"
+avatar = ExtResource("6_u24po")
+effect_sound = ExtResource("18_rie15")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_u0d0m"]
+script = ExtResource("5_pa6du")
+content = "* 我还会大跳！"
+avatar = ExtResource("6_u24po")
+effect_sound = ExtResource("18_s1sr3")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_ewb0f"]
+script = ExtResource("5_pa6du")
+content = "* 我还会跑！"
+avatar = ExtResource("6_u24po")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_x8xhn"]
+script = ExtResource("5_pa6du")
+content = ""
+avatar = ExtResource("6_u24po")
+effect_sound = ExtResource("18_7tifo")
+dialogue_opacity = 0.0
+can_skip = false
+auto_continue = true
+stay_duration = 1.5
+hide_end_hint = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_50h6i"]
+script = ExtResource("5_pa6du")
+content = "* 好了，我有点事先走一步，
+  到那边再联系！"
+avatar = ExtResource("6_u24po")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_i0p6k"]
+script = ExtResource("5_pa6du")
+content = "* 您给路大哟！吼吼吼！"
+effect_sound = ExtResource("18_7tifo")
 metadata/_custom_type_script = "uid://c06clw1acxak"
 
 [sub_resource type="Resource" id="Resource_rie15"]
 script = ExtResource("2_klt63")
-dialogue_list = Array[ExtResource("5_pa6du")]([SubResource("Resource_3im3h"), SubResource("Resource_viokw")])
+dialogue_list = Array[ExtResource("5_pa6du")]([SubResource("Resource_3im3h"), SubResource("Resource_viokw"), SubResource("Resource_hpkci"), SubResource("Resource_6fmce"), SubResource("Resource_6dsnu"), SubResource("Resource_fpdbl"), SubResource("Resource_u0d0m"), SubResource("Resource_ewb0f"), SubResource("Resource_x8xhn"), SubResource("Resource_50h6i"), SubResource("Resource_i0p6k")])
 id = "animation"
-next_id = "animation"
+next_id = "animation1"
 metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
+[sub_resource type="Resource" id="Resource_76lnv"]
+script = ExtResource("5_pa6du")
+content = "* 就是测试一下，这边其实什么也没有！"
+avatar = ExtResource("6_u24po")
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_xoh4l"]
+script = ExtResource("2_klt63")
+dialogue_list = Array[ExtResource("5_pa6du")]([SubResource("Resource_76lnv")])
+id = "animation1"
+next_id = "animation1"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
+[sub_resource type="Resource" id="Resource_7tifo"]
+script = ExtResource("16_3cnoe")
+dialogue_id = "animation"
+animation_name = "拉伸Y轴"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_s1sr3"]
+script = ExtResource("16_3cnoe")
+dialogue_id = "animation"
+line_index = 1
+animation_name = "拉伸Y轴"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_w0ihg"]
+script = ExtResource("16_3cnoe")
+dialogue_id = "animation"
+line_index = 4
+animation_name = "超级弹Y"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_em1a2"]
+script = ExtResource("16_3cnoe")
+dialogue_id = "animation"
+line_index = 6
+animation_name = "jump"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_kx0dn"]
+script = ExtResource("16_3cnoe")
+dialogue_id = "animation"
+line_index = 8
+animation_name = "寻路动画示例"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_l8lm1"]
+script = ExtResource("16_3cnoe")
+dialogue_id = "animation"
+line_index = 10
+animation_name = "戈多跑路了"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
 
 [node name="小地图" type="Node2D" unique_id=1568773970]
 
@@ -68,6 +207,7 @@ dialogue_groups = Array[ExtResource("2_klt63")]([SubResource("Resource_d6gwx")])
 [node name="Player" parent="." unique_id=1997236098 groups=["player"] instance=ExtResource("10_pa6du")]
 position = Vector2(102, 131)
 scale = Vector2(2, 2)
+ActionGroup = Array[ExtResource("16_3cnoe")]([SubResource("Resource_lm30c")])
 
 [node name="Door2" parent="." unique_id=1732229786 instance=ExtResource("10_0jy5m")]
 position = Vector2(13.000001, 105)
@@ -90,7 +230,10 @@ transition_data = SubResource("Resource_icejk")
 [node name="Marker2D2" type="Marker2D" parent="Door" unique_id=1147865101]
 position = Vector2(16.8, 0)
 
-[node name="NPC2" parent="." unique_id=825757453 instance=ExtResource("15_icejk")]
-position = Vector2(221, 212)
+[node name="Node2D" type="Node2D" parent="." unique_id=2105878296]
+position = Vector2(121, 205)
 scale = Vector2(3, 3)
-dialogue_groups = Array[ExtResource("2_klt63")]([SubResource("Resource_rie15")])
+
+[node name="NPC2" parent="Node2D" unique_id=825757453 instance=ExtResource("15_icejk")]
+dialogue_groups = Array[ExtResource("2_klt63")]([SubResource("Resource_rie15"), SubResource("Resource_xoh4l")])
+ActionGroup = Array[ExtResource("16_3cnoe")]([SubResource("Resource_7tifo"), SubResource("Resource_s1sr3"), SubResource("Resource_w0ihg"), SubResource("Resource_em1a2"), SubResource("Resource_kx0dn"), SubResource("Resource_l8lm1")])

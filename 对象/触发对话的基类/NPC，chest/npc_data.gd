@@ -13,10 +13,11 @@ extends StaticBody2D
 
 @export_group("NormalAction")
 @export var idle : Array[String]
-@export_group("EventAction")
-@export var Event : Array[Action] 
+@export_group("DialogueAction")
+@export var ActionGroup : Array[Action] 
 
 var current_group_id: String = ""
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
@@ -71,7 +72,7 @@ func _check_flags(flag_str: String) -> bool:
 			return false
 	return true
 func _on_line_reached(group_id: String, line_index: int) -> void:
-	for action in Event:
+	for action in ActionGroup:
 		if action.dialogue_id == group_id and action.line_index == line_index:
 			if action.animation_name != "" and has_node("AnimationPlayer"):
 				animation_player.play(action.animation_name)

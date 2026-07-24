@@ -12,13 +12,20 @@ extends Area2D
 @export var item : Array
 @export var sound : Resource
 
+@export_group("NormalAction")
+@export var idle : Array[String]
+@export_group("DialogueAction")
+@export var ActionGroup : Array[Action] 
+
 var current_group_id: String = ""
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	if dialogue_groups.size() > 0:
 		current_group_id = dialogue_groups[0].id
 	body_entered.connect(_on_body_entered)
 	Global.dialogue_broadcast.connect(_on_broadcast)
+	Global.dialogue_line_reached.connect(_on_line_reached)
 func _on_body_entered(body: Node2D) -> void:
 	if not body is Player:
 		return
@@ -66,3 +73,8 @@ func _check_flags(flag_str: String) -> bool:
 		if not Global.has_flag(f.strip_edges()):
 			return false
 	return true
+func _on_line_reached(group_id: String, line_index: int) -> void:
+	for action in ActionGroup:
+		if action.dialogue_id == group_id and action.line_index == line_index:
+			if action.animation_name != "" and has_node("AnimationPlayer"):
+				animation_player.play(action.animation_name)

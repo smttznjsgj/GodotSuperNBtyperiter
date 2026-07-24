@@ -71,6 +71,7 @@ var _stay_active: bool = false
 var _stay_timer: float = 0.0
 var _stay_duration: float = 0.0
 var _stay_auto_advance: bool = false
+var _last_signaled_index: int = -1#单纯用来检测对话序列是否更新的标准值，只要小于0的数均可（要让其不为index里面的任意大于等于0的整数！）
 func display_next_dialogue() -> void:
 	end_hint.modulate.a = 0.0
 	_stay_active = false
@@ -111,8 +112,11 @@ func display_next_dialogue() -> void:
 		_finish_dialogue()
 		return
 	var dialogue := main_dialogue.dialogue_list[dialogue_index]
-	Global.dialogue_line_reached.emit(main_dialogue.id, dialogue_index) 
-	print(main_dialogue.id,",",dialogue_index) 
+	if dialogue_index != _last_signaled_index:
+		Global.dialogue_line_reached.emit(main_dialogue.id, dialogue_index)
+		_last_signaled_index = dialogue_index
+	container.modulate.a = dialogue.dialogue_opacity
+	
 	container.modulate.a = dialogue.dialogue_opacity
 	var processed_content = dialogue.content.replace("{name}", Global.player.player_name)
 	if dialogue.position_up and not _ui_at_top:
@@ -529,6 +533,7 @@ func start_dialogue(group: DialogueGroup) -> void:
 	current_choice_index = 0
 	container.visible = true
 	Global.can_act = false
+	_last_signaled_index = -1#检测的标准值，归位一下
 	if group.dialogue_list.size() > 0 and group.dialogue_list[0].position_up:
 		_move_ui_to_top()
 		_ui_at_top = true
