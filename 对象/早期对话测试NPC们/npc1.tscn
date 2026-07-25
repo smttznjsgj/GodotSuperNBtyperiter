@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://duwmhj8ejc8pi"]
 
-[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_exika"]
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="1_exika"]
 [ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="2_rbiw1"]
 [ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="3_ecgyl"]
 [ext_resource type="Texture2D" uid="uid://dgrvir4pk5c7s" path="res://素材/spr_chestbox_0.png" id="3_fdjr1"]

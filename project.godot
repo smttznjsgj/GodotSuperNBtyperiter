@@ -1,17 +1,9 @@
-; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
-
 config_version=5
 
 [application]
 
-config/name="动画/event系统代办"
-run/main_scene="uid://cjnsuqg5xl3uj"
+config/name="存档，背包ui代办"
+run/main_scene="uid://ccgckf5jipx7u"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

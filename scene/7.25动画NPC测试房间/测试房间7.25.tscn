@@ -1,0 +1,412 @@
+[gd_scene format=3 uid="uid://ccgckf5jipx7u"]
+
+[ext_resource type="PackedScene" uid="uid://ct4fqe3jg1yoh" path="res://player/player.tscn" id="1_bmluq"]
+[ext_resource type="PackedScene" uid="uid://b4e4hhvn1wieq" path="res://对象/动画效果测试NPC们/完善的动画效果测试NPC.tscn" id="2_ke72i"]
+[ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="3_gsgia"]
+[ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="4_de4na"]
+[ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="5_77u6n"]
+[ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="6_bx5sf"]
+[ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="7_m6d6b"]
+[ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="8_47s2h"]
+[ext_resource type="Script" uid="uid://csasqy50o02oj" path="res://EventSystem/Action_data.gd" id="9_3ggnl"]
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="10_hi11n"]
+[ext_resource type="AudioStream" uid="uid://e88ixqv40ik1" path="res://素材/44_1kHz-16bit/04_Mixed_Sfx/Cartoon_2.wav" id="11_de4na"]
+[ext_resource type="Texture2D" uid="uid://c8r4piccnxnbd" path="res://素材/Flowey/spr_flowey_riseanim_0-Sheet.png" id="12_77u6n"]
+[ext_resource type="AudioStream" uid="uid://b1a0bnvkq80jk" path="res://素材/44_1kHz-16bit/04_Mixed_Sfx/Cartoon_3.wav" id="12_bx5sf"]
+[ext_resource type="Texture2D" uid="uid://cusmf5omb6um0" path="res://素材/Flowey/spr_floweynice_0-Sheet.png" id="13_bx5sf"]
+
+[sub_resource type="Resource" id="Resource_21cpp"]
+script = ExtResource("6_bx5sf")
+content = "* 看，我在和你说话！"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_hkthj"]
+script = ExtResource("3_gsgia")
+dialogue_list = Array[ExtResource("6_bx5sf")]([SubResource("Resource_21cpp")])
+id = "flower"
+next_id = "flower"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
+[sub_resource type="Resource" id="Resource_l6f4l"]
+script = ExtResource("9_3ggnl")
+dialogue_id = "flower"
+player_node = 1
+animation_name = "flowey_talk_01"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_m6d6b"]
+script = ExtResource("6_bx5sf")
+content = ""
+effect_sound = ExtResource("11_de4na")
+dialogue_opacity = 0.0
+can_skip = false
+auto_continue = true
+stay_duration = 1.1
+hide_end_hint = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_47s2h"]
+script = ExtResource("6_bx5sf")
+content = "* 啊哈哈！我突然出现吓到你了吗？"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_3ggnl"]
+script = ExtResource("6_bx5sf")
+content = "* 但是这只是个测试！"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_hi11n"]
+script = ExtResource("6_bx5sf")
+content = "* 我知道我的画风有点奇怪！"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_1og5y"]
+script = ExtResource("6_bx5sf")
+content = "* 因为我不该在这里！"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_3nxw2"]
+script = ExtResource("6_bx5sf")
+content = "* 我还是\"花”走吧~"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_lx7xq"]
+script = ExtResource("6_bx5sf")
+content = "* 再见咯！"
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_cmafy"]
+script = ExtResource("6_bx5sf")
+content = ""
+effect_sound = ExtResource("12_bx5sf")
+dialogue_opacity = 0.0
+can_skip = false
+auto_continue = true
+stay_duration = 1.1
+hide_end_hint = true
+metadata/_custom_type_script = "uid://c06clw1acxak"
+
+[sub_resource type="Resource" id="Resource_rg0uu"]
+script = ExtResource("3_gsgia")
+dialogue_list = Array[ExtResource("6_bx5sf")]([SubResource("Resource_m6d6b"), SubResource("Resource_47s2h"), SubResource("Resource_3ggnl"), SubResource("Resource_hi11n"), SubResource("Resource_1og5y"), SubResource("Resource_3nxw2"), SubResource("Resource_lx7xq"), SubResource("Resource_cmafy")])
+id = "花_测试_1"
+next_id = "花_测试_1"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
+[sub_resource type="Resource" id="Resource_gk1mk"]
+script = ExtResource("3_gsgia")
+id = "花_测试_2"
+next_id = "花_测试_end"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
+[sub_resource type="Resource" id="Resource_2rh5k"]
+script = ExtResource("3_gsgia")
+id = "花_测试_end"
+metadata/_custom_type_script = "uid://br0sgnpurqem5"
+
+[sub_resource type="Resource" id="Resource_de4na"]
+script = ExtResource("9_3ggnl")
+dialogue_id = "花_测试_1"
+player_node = 1
+animation_name = "出现"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_77u6n"]
+script = ExtResource("9_3ggnl")
+dialogue_id = "花_测试_1"
+line_index = 7
+player_node = 1
+animation_name = "消失"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_bx5sf"]
+script = ExtResource("9_3ggnl")
+dialogue_id = "花_测试_1"
+line_index = 1
+player_node = 1
+animation_name = "说话"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_40l5c"]
+script = ExtResource("9_3ggnl")
+dialogue_id = "花_测试_1"
+line_index = 6
+player_node = 1
+animation_name = "说话"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_4ghmd"]
+script = ExtResource("9_3ggnl")
+dialogue_id = "花_测试_1"
+line_index = 5
+player_node = 1
+animation_name = "说话"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_j4686"]
+script = ExtResource("9_3ggnl")
+dialogue_id = "花_测试_1"
+line_index = 4
+player_node = 1
+animation_name = "说话"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_ilbl0"]
+script = ExtResource("9_3ggnl")
+dialogue_id = "花_测试_1"
+line_index = 3
+player_node = 1
+animation_name = "说话"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="Resource" id="Resource_awsk5"]
+script = ExtResource("9_3ggnl")
+dialogue_id = "花_测试_1"
+line_index = 2
+player_node = 1
+animation_name = "说话"
+metadata/_custom_type_script = "uid://csasqy50o02oj"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
+size = Vector2(15.240098, 27.859978)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7mpe"]
+size = Vector2(39, 58.0625)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40l5c"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(0, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ghmd"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(45, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4686"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(90, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilbl0"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(135, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awsk5"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(180, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtnl"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(225, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nuvp"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(270, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv544"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(315, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt6ag"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(360, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwuwj"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(360, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdetl"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(315, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnxpw"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(270, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekw6l"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(225, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf4cf"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(180, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpgik"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(135, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no5c0"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(90, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow4vs"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(45, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbr51"]
+atlas = ExtResource("12_77u6n")
+region = Rect2(0, 0, 45, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac33g"]
+atlas = ExtResource("13_bx5sf")
+region = Rect2(0, 0, 45, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp0y7"]
+atlas = ExtResource("13_bx5sf")
+region = Rect2(45, 0, 45, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1jc8"]
+atlas = ExtResource("13_bx5sf")
+region = Rect2(0, 0, 45, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f0ym"]
+atlas = ExtResource("13_bx5sf")
+region = Rect2(45, 0, 45, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s70i"]
+atlas = ExtResource("13_bx5sf")
+region = Rect2(0, 0, 45, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1og5y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40l5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ghmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4686")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilbl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awsk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nuvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv544")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt6ag")
+}],
+"loop": false,
+"name": &"出现",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwuwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdetl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnxpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekw6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf4cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpgik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no5c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow4vs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbr51")
+}],
+"loop": false,
+"name": &"消失",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac33g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp0y7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1jc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f0ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s70i")
+}],
+"loop": false,
+"name": &"说话",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcj77"]
+size = Vector2(164, 99)
+
+[node name="测试房间7_25" type="Node2D" unique_id=1509675088]
+
+[node name="Player" parent="." unique_id=1997236098 instance=ExtResource("1_bmluq")]
+position = Vector2(211, 122)
+scale = Vector2(2, 2)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1287056999]
+position = Vector2(420, 252)
+scale = Vector2(2, 2)
+
+[node name="NPC" parent="Node2D" unique_id=666820554 instance=ExtResource("2_ke72i")]
+position = Vector2(0, 0.5)
+dialogue_groups = Array[ExtResource("3_gsgia")]([SubResource("Resource_hkthj")])
+ActionGroup = Array[ExtResource("9_3ggnl")]([SubResource("Resource_l6f4l")])
+
+[node name="7_25日测试动画NPC_1" type="StaticBody2D" parent="." unique_id=1369632629]
+position = Vector2(373, 137)
+script = ExtResource("10_hi11n")
+dialogue_groups = Array[ExtResource("3_gsgia")]([SubResource("Resource_rg0uu"), SubResource("Resource_gk1mk"), SubResource("Resource_2rh5k")])
+start_sprite_anim = "消失"
+ActionGroup = Array[ExtResource("9_3ggnl")]([SubResource("Resource_de4na"), SubResource("Resource_77u6n"), SubResource("Resource_bx5sf"), SubResource("Resource_40l5c"), SubResource("Resource_4ghmd"), SubResource("Resource_j4686"), SubResource("Resource_ilbl0"), SubResource("Resource_awsk5")])
+
+[node name="Sprite2D" type="Sprite2D" parent="7_25日测试动画NPC_1" unique_id=1979832529]
+texture_filter = 1
+scale = Vector2(0.15, 0.15)
+
+[node name="物理层red" type="CollisionShape2D" parent="7_25日测试动画NPC_1" unique_id=43550759]
+z_index = 2
+position = Vector2(-1.5, 3.25)
+scale = Vector2(1.1154813, 0.6640347)
+shape = SubResource("RectangleShape2D_trlyu")
+debug_color = Color(0.99396795, 0, 0.23658371, 0.41960785)
+
+[node name="raycast_area_blue" type="Area2D" parent="7_25日测试动画NPC_1" unique_id=1872116843]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7_25日测试动画NPC_1/raycast_area_blue" unique_id=1652434430]
+position = Vector2(-3, -14.96875)
+shape = SubResource("RectangleShape2D_x7mpe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="7_25日测试动画NPC_1" unique_id=463403333]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="7_25日测试动画NPC_1" unique_id=878863370]
+texture_filter = 1
+position = Vector2(-1, -16)
+sprite_frames = SubResource("SpriteFrames_1og5y")
+animation = &"消失"
+
+[node name="zone_trigger_white" type="Area2D" parent="7_25日测试动画NPC_1" unique_id=673484511]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7_25日测试动画NPC_1/zone_trigger_white" unique_id=1182920849]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_lcj77")
+debug_color = Color(0.5076759, 0.54685533, 0.5374734, 0.41960785)

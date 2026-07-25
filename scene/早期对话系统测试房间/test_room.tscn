@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cjnsuqg5xl3uj"]
 
 [ext_resource type="PackedScene" uid="uid://ct4fqe3jg1yoh" path="res://player/player.tscn" id="1_ton2f"]
-[ext_resource type="PackedScene" uid="uid://duwmhj8ejc8pi" path="res://对象/NPC们/npc1.tscn" id="2_8gahd"]
-[ext_resource type="PackedScene" uid="uid://o7hhieffmau4" path="res://对象/NPC们/npc3.tscn" id="3_hhrv1"]
-[ext_resource type="PackedScene" uid="uid://b436ecifecyi4" path="res://对象/NPC们/npc2.tscn" id="4_hhrv1"]
+[ext_resource type="PackedScene" uid="uid://duwmhj8ejc8pi" path="res://对象/早期对话测试NPC们/npc1.tscn" id="2_8gahd"]
+[ext_resource type="PackedScene" uid="uid://o7hhieffmau4" path="res://对象/早期对话测试NPC们/npc3.tscn" id="3_hhrv1"]
+[ext_resource type="PackedScene" uid="uid://b436ecifecyi4" path="res://对象/早期对话测试NPC们/npc2.tscn" id="4_hhrv1"]
 [ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="4_jl3h3"]
 [ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="4_xg7ot"]
 [ext_resource type="Script" uid="uid://c06clw1acxak" path="res://dialogue_script/dialogue.gd" id="5_j4i0s"]
@@ -11,22 +11,22 @@
 [ext_resource type="Texture2D" uid="uid://dgrvir4pk5c7s" path="res://素材/spr_chestbox_0.png" id="6_j4i0s"]
 [ext_resource type="Script" uid="uid://dldgg11dqgiaa" path="res://dialogue_script/effects_script/effect_data.gd" id="6_sbee0"]
 [ext_resource type="FontFile" uid="uid://bum4xw5voqfow" path="res://素材/Fonts/方正像素12.ttf" id="7_eel6g"]
-[ext_resource type="PackedScene" uid="uid://op6qmkjr4a3v" path="res://对象/NPC们/npc_choice_test.tscn" id="10_sbee0"]
+[ext_resource type="PackedScene" uid="uid://op6qmkjr4a3v" path="res://对象/早期对话测试NPC们/npc_choice_test.tscn" id="10_sbee0"]
 [ext_resource type="Texture2D" uid="uid://cc86i26y1ivtk" path="res://icon.svg" id="11_wvjs4"]
 [ext_resource type="Script" uid="uid://bsko0xhx61xck" path="res://dialogue_script/effects_script/Choice_effects/choice_snap_effect.gd" id="13_6naqk"]
 [ext_resource type="Script" uid="uid://o5w5t5g5q8oj" path="res://dialogue_script/effects_script/Choice_effects/choice_wobbel_effect.gd" id="14_8ajjh"]
-[ext_resource type="PackedScene" uid="uid://cevidcc5uhh41" path="res://对象/NPC们/高级效果对话.tscn" id="14_vcrkc"]
+[ext_resource type="PackedScene" uid="uid://cevidcc5uhh41" path="res://对象/早期对话测试NPC们/高级效果对话.tscn" id="14_vcrkc"]
 [ext_resource type="Script" uid="uid://erbvo1gibc3o" path="res://dialogue_script/effects_script/effect_wobble.gd" id="15_f40vf"]
 [ext_resource type="Script" uid="uid://dsfm23hvgynuq" path="res://dialogue_script/effects_script/effect_shake.gd" id="16_pt8ia"]
 [ext_resource type="Resource" uid="uid://0wqd884i33k" path="res://dialogues/bbcode_demo.tres" id="17_wswju"]
-[ext_resource type="PackedScene" uid="uid://8raimy7g01cr" path="res://对象/NPC们/不能跳过的对话测试.tscn" id="18_g1cbb"]
-[ext_resource type="PackedScene" uid="uid://dgab3rq0ja8ng" path="res://对象/NPC们/选项系统的完整演示.tscn" id="20_ear1o"]
+[ext_resource type="PackedScene" uid="uid://8raimy7g01cr" path="res://对象/早期对话测试NPC们/不能跳过的对话测试.tscn" id="18_g1cbb"]
+[ext_resource type="PackedScene" uid="uid://dgab3rq0ja8ng" path="res://对象/早期对话测试NPC们/选项系统的完整演示.tscn" id="20_ear1o"]
 [ext_resource type="Resource" uid="uid://b38mdkiao6332" path="res://dialogues/choice_demo_intro.tres" id="21_ear1o"]
 [ext_resource type="Resource" uid="uid://b7k1epwuhwpfe" path="res://dialogues/choice_demo_snap_blocked.tres" id="22_fol8s"]
 [ext_resource type="Resource" uid="uid://bi4djagptplo2" path="res://dialogues/choice_demo_snap_free.tres" id="23_dlmox"]
 [ext_resource type="Resource" uid="uid://dvtsooob1s8jk" path="res://dialogues/choice_demo_wobble.tres" id="24_bnjh2"]
 [ext_resource type="Resource" uid="uid://cei2bhdl8mw1y" path="res://dialogues/choice_demo_end.tres" id="25_dif85"]
-[ext_resource type="PackedScene" uid="uid://440xn70afvhh" path="res://对象/NPC们/头像排版测试.tscn" id="26_fol8s"]
+[ext_resource type="PackedScene" uid="uid://440xn70afvhh" path="res://对象/早期对话测试NPC们/头像排版测试.tscn" id="26_fol8s"]
 [ext_resource type="Resource" uid="uid://dt5nwuxnkxpkl" path="res://dialogues/羊妈测试对话/new_resource.tres" id="27_b83ri"]
 [ext_resource type="Resource" uid="uid://buevr6rucgrt7" path="res://dialogues/羊妈测试对话/new_resource2.tres" id="28_pppdl"]
 [ext_resource type="Resource" uid="uid://cot2ng6swhbi5" path="res://dialogues/羊妈测试对话/new_resource3.tres" id="29_b11wq"]
@@ -34,9 +34,10 @@
 [ext_resource type="Resource" uid="uid://ddotr6d53eo5j" path="res://dialogues/羊妈测试对话/new_resource5.tres" id="31_0ubw4"]
 [ext_resource type="Resource" uid="uid://bsjfkjrsgy41h" path="res://dialogues/羊妈测试对话/new_resource6.tres" id="32_5dinp"]
 [ext_resource type="Resource" uid="uid://iv14acpyolvw" path="res://dialogues/羊妈测试对话/new_resource7.tres" id="33_2et4b"]
-[ext_resource type="PackedScene" uid="uid://cfbimc6dmf6am" path="res://对象/触发对话的基类/NPC，chest/npc.tscn" id="35_b11wq"]
-[ext_resource type="AudioStream" uid="uid://b7lqfkuan2lwm" path="res://素材/门声/Farming_Door_Open_Volume_1_1_1.wav" id="37_nw8nw"]
+[ext_resource type="PackedScene" uid="uid://cfbimc6dmf6am" path="res://对象/NPC基类/npc.tscn" id="35_b11wq"]
+[ext_resource type="AudioStream" uid="uid://tk43kq5hlmcg" path="res://素材/门声/Farming_Door_Close_VeryHeavy_Volume_1_3_2.wav" id="37_r57xy"]
 [ext_resource type="PackedScene" uid="uid://yumxpl15ipyo" path="res://对象/door门/具体的门/test房间的门.tscn" id="38_5dinp"]
+[ext_resource type="AudioStream" uid="uid://c0jie7xoqx8ag" path="res://素材/声音/snd_test.wav" id="38_nw8nw"]
 [ext_resource type="AudioStream" uid="uid://d3fxqgmmtkxgp" path="res://素材/门声/Farming_Door_Close_Medium_Volume_1_2_2.wav" id="40_nw8nw"]
 [ext_resource type="AudioStream" uid="uid://56or58hb2g0j" path="res://素材/门声/Farming_Door_Open_Volume_1_1_2.wav" id="40_r57xy"]
 [ext_resource type="Script" uid="uid://byybnjrs7alwr" path="res://对象/door门/门的脚本/切换shader/transition_data.gd" id="41_nw8nw"]
@@ -670,8 +671,10 @@ metadata/_custom_type_script = "uid://br0sgnpurqem5"
 
 [sub_resource type="Resource" id="Resource_2nnx4"]
 script = ExtResource("5_j4i0s")
-content = ""
-effect_sound = ExtResource("37_nw8nw")
+content = "* 吓死你"
+typing_sound = ExtResource("38_nw8nw")
+effect_sound = ExtResource("37_r57xy")
+typing_speed = 0.001
 auto_continue = true
 stay_duration = 1.0
 metadata/_custom_type_script = "uid://c06clw1acxak"
@@ -693,7 +696,7 @@ metadata/_custom_type_script = "uid://byybnjrs7alwr"
 [node name="Player" parent="." unique_id=1997236098 groups=["player"] instance=ExtResource("1_ton2f")]
 position = Vector2(436, 228)
 scale = Vector2(2, 2)
-start_anim = "idle_left"
+start_anim = "idle_right"
 
 [node name="箱子1" parent="." unique_id=152196526 instance=ExtResource("2_8gahd")]
 position = Vector2(511, 135)
@@ -757,18 +760,18 @@ scale = Vector2(2, 2)
 dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_4xl2j")])
 
 [node name="NPC2" parent="." unique_id=1497255856 instance=ExtResource("35_b11wq")]
-position = Vector2(202, 98)
+position = Vector2(88, 99)
 dialogue_groups = Array[ExtResource("4_xg7ot")]([SubResource("Resource_4l1vf")])
 
 [node name="门_2_1" parent="." unique_id=1713148592 instance=ExtResource("38_5dinp")]
-position = Vector2(366.00003, 252)
+position = Vector2(253.00003, 94.000015)
 scale = Vector2(2.5, 2.5)
 target_scene = "uid://bvjfunlbknh4d"
 spawn_target = "Marker2D5"
 transition_data = SubResource("Resource_5hbtc")
 
 [node name="Marker2D3" type="Marker2D" parent="门_2_1" unique_id=1872308849]
-position = Vector2(17.19998, 3.5999968)
+position = Vector2(16.399992, 15.199993)
 
 [node name="门_1_1" parent="." unique_id=1732229786 instance=ExtResource("38_5dinp")]
 position = Vector2(592.00006, 444.00003)

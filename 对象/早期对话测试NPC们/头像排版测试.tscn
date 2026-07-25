@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://440xn70afvhh"]
 
-[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_omqtx"]
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="1_omqtx"]
 [ext_resource type="Texture2D" uid="uid://blb3787tbjwid" path="res://素材/toriel_face/Overworld/spr_chairiel_1.png" id="2_jlepr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]

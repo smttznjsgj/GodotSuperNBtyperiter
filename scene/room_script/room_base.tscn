@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bee4q6q4ki535"]
+
+[ext_resource type="Script" uid="uid://dv1fagyplqknx" path="res://scene/room_script/room_base.gd" id="1_35p2i"]
+
+[node name="RoomBase" type="Node2D" unique_id=297510852 node_paths=PackedStringArray("npcs")]
+script = ExtResource("1_35p2i")
+npcs = [null, null, null]

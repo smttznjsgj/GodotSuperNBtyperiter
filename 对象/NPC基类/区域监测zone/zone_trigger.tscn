@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7rl07jx2siij"]
 
-[ext_resource type="Script" uid="uid://c46428goyyydi" path="res://对象/触发对话的基类/区域监测zone/zone_trigger_data.gd" id="1_fclbv"]
+[ext_resource type="Script" uid="uid://c46428goyyydi" path="res://对象/NPC基类/区域监测zone/zone_trigger_data.gd" id="1_fclbv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
 size = Vector2(26.894222, 45.17836)
@@ -16,3 +16,5 @@ scale = Vector2(0.15, 0.15)
 position = Vector2(0, -2.3841858e-07)
 scale = Vector2(1.1154813, 0.6640347)
 shape = SubResource("RectangleShape2D_trlyu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2026886715]

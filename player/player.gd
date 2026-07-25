@@ -1,6 +1,6 @@
 class_name Player
 extends CharacterBody2D
-##初始动画判断朝向，设置了一些常用的
+##初始动画判断朝向，设置了一些常用的，后续如果有其他需要的动画往表单里面加
 @export_enum("idle_forward", "idle_back", "idle_left", "idle_right")  var start_anim: String = "idle_forward"
 ##特殊起始动画，若其不为空，则顶替掉上面的四个选项的start_anim
 @export var special_start_anim: String = ""
@@ -22,6 +22,9 @@ const SPEED = 300.0
 
 func _physics_process(delta: float) -> void:
 	if not Global.can_act:
+		var idle_anim := _get_direction_name("idle_")
+		if idle_anim != animated_sprite.animation:
+			animated_sprite.play(idle_anim)
 		return
 	
 	var input_dir :=Input.get_vector("ui_left","ui_right","ui_up","ui_down")

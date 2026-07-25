@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://b4e4hhvn1wieq"]
+
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="1_1oq1p"]
+[ext_resource type="Texture2D" uid="uid://cylf12uts43rn" path="res://素材/spr_flowey_0-Sheet.png" id="2_qe60k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
+size = Vector2(14.343585, 12.047563)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7mpe"]
+size = Vector2(18, 16.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnyb6"]
+atlas = ExtResource("2_qe60k")
+region = Rect2(0, 0, 23, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rx4d"]
+atlas = ExtResource("2_qe60k")
+region = Rect2(23, 0, 23, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oq1p"]
+atlas = ExtResource("2_qe60k")
+region = Rect2(0, 0, 23, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe60k"]
+atlas = ExtResource("2_qe60k")
+region = Rect2(23, 0, 23, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgqxq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnyb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rx4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oq1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe60k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oq1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe60k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oq1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe60k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oq1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe60k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oq1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe60k")
+}],
+"loop": false,
+"name": &"flowey_talk_01",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcj77"]
+size = Vector2(38.125, 20.875)
+
+[node name="NPC" type="StaticBody2D" unique_id=666820554]
+script = ExtResource("1_1oq1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979832529]
+texture_filter = 1
+scale = Vector2(0.15, 0.15)
+
+[node name="物理层red" type="CollisionShape2D" parent="." unique_id=43550759]
+z_index = 2
+scale = Vector2(1.1154813, 0.6640347)
+shape = SubResource("RectangleShape2D_trlyu")
+debug_color = Color(0.99396795, 0, 0.23658371, 0.41960785)
+
+[node name="raycast_area_blue" type="Area2D" parent="." unique_id=1872116843]
+position = Vector2(0, -1)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="raycast_area_blue" unique_id=1652434430]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_x7mpe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=463403333]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=878863370]
+texture_filter = 1
+position = Vector2(0.25, -0.25)
+scale = Vector2(0.9782609, 1.0217391)
+sprite_frames = SubResource("SpriteFrames_xgqxq")
+animation = &"flowey_talk_01"
+frame = 1
+frame_progress = 0.6561938
+
+[node name="zone_trigger_white" type="Area2D" parent="." unique_id=673484511]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone_trigger_white" unique_id=1182920849]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_lcj77")
+debug_color = Color(0.5076759, 0.54685533, 0.5374734, 0.41960785)

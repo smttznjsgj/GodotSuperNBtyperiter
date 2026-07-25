@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://cfbimc6dmf6am"]
 
-[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_lcj77"]
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="1_fenh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
-size = Vector2(17.929482, 28.61296)
+size = Vector2(14.343585, 12.047563)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7mpe"]
-size = Vector2(44, 33)
+size = Vector2(18, 16.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcj77"]
+size = Vector2(38.125, 20.875)
 
 [node name="NPC" type="StaticBody2D" unique_id=666820554]
-script = ExtResource("1_lcj77")
+script = ExtResource("1_fenh2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979832529]
 texture_filter = 1
@@ -17,18 +20,25 @@ scale = Vector2(0.15, 0.15)
 
 [node name="物理层red" type="CollisionShape2D" parent="." unique_id=43550759]
 z_index = 2
-position = Vector2(-0.49999928, -0.5)
+position = Vector2(0, 3)
 scale = Vector2(1.1154813, 0.6640347)
 shape = SubResource("RectangleShape2D_trlyu")
 debug_color = Color(0.99396795, 0, 0.23658371, 0.41960785)
 
-[node name="射线检测层blue" type="Area2D" parent="." unique_id=1872116843]
+[node name="raycast_area_blue" type="Area2D" parent="." unique_id=1872116843]
 collision_layer = 16
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="射线检测层blue" unique_id=1652434430]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="raycast_area_blue" unique_id=1652434430]
 shape = SubResource("RectangleShape2D_x7mpe")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=463403333]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=878863370]
+
+[node name="zone_trigger_white" type="Area2D" parent="." unique_id=673484511]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone_trigger_white" unique_id=1182920849]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_lcj77")
+debug_color = Color(0.5076759, 0.54685533, 0.5374734, 0.41960785)

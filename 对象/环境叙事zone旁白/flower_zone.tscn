@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bl4gtfhx4c56s"]
 
-[ext_resource type="Script" uid="uid://c46428goyyydi" path="res://对象/触发对话的基类/区域监测zone/zone_trigger_data.gd" id="1_2yyew"]
+[ext_resource type="Script" uid="uid://c46428goyyydi" path="res://对象/NPC基类/区域监测zone/zone_trigger_data.gd" id="1_2yyew"]
 [ext_resource type="Texture2D" uid="uid://dc5nbd62vimol" path="res://素材/unnamed_3510.png" id="2_ughje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acenc"]

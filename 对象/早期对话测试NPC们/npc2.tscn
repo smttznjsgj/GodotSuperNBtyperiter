@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b436ecifecyi4"]
 
-[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/触发对话的基类/NPC，chest/npc_data.gd" id="1_u78lv"]
+[ext_resource type="Script" uid="uid://d24bf4ewmqmpg" path="res://对象/NPC基类/npc_data.gd" id="1_u78lv"]
 [ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="2_iywpx"]
 [ext_resource type="Texture2D" uid="uid://djm11car8a8dh" path="res://素材/spr_fridge_0.png" id="2_n2s4b"]
 [ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="3_k7fs6"]

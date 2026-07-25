@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bvjfunlbknh4d"]
 
-[ext_resource type="PackedScene" uid="uid://gos4eovmxidm" path="res://对象/NPC们/房间2的一个测试NPC.tscn" id="1_ls077"]
+[ext_resource type="PackedScene" uid="uid://gos4eovmxidm" path="res://对象/早期对话测试NPC们/房间2的一个测试NPC.tscn" id="1_ls077"]
 [ext_resource type="Script" uid="uid://br0sgnpurqem5" path="res://dialogue_script/dialogue_group.gd" id="2_klt63"]
 [ext_resource type="AudioStream" uid="uid://c3vhggn8ytgpw" path="res://素材/声音/snd_select.wav" id="3_u24po"]
 [ext_resource type="AudioStream" uid="uid://cxyfuntp5ia6k" path="res://素材/声音/snd_squeak.wav" id="4_vq78r"]
@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://d3fxqgmmtkxgp" path="res://素材/门声/Farming_Door_Close_Medium_Volume_1_2_2.wav" id="11_0jy5m"]
 [ext_resource type="AudioStream" uid="uid://56or58hb2g0j" path="res://素材/门声/Farming_Door_Open_Volume_1_1_2.wav" id="11_d6gwx"]
 [ext_resource type="Script" uid="uid://byybnjrs7alwr" path="res://对象/door门/门的脚本/切换shader/transition_data.gd" id="13_icejk"]
-[ext_resource type="PackedScene" uid="uid://brerk5bsqxe2p" path="res://对象/NPC们/动画效果测试NPC1.tscn" id="15_icejk"]
+[ext_resource type="PackedScene" uid="uid://brerk5bsqxe2p" path="res://对象/早期对话测试NPC们/非精灵图动画效果测试NPC1.tscn" id="15_icejk"]
 [ext_resource type="Script" uid="uid://csasqy50o02oj" path="res://EventSystem/Action_data.gd" id="16_3cnoe"]
 [ext_resource type="AudioStream" uid="uid://cwfk6muy3ytbp" path="res://素材/44_1kHz-16bit/03_Short_Tonal_Sfx/Grp01_1_Retro_8_Bit_Chiptune.wav" id="16_3im3h"]
 [ext_resource type="AudioStream" uid="uid://dbk148j1vj4c0" path="res://素材/小钢琴溜走音效.mp3" id="18_7tifo"]
