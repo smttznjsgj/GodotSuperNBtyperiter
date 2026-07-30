@@ -1,9 +1,10 @@
 class_name Player
 extends CharacterBody2D
 ##初始动画判断朝向，设置了一些常用的，后续如果有其他需要的动画往表单里面加
-@export_enum("idle_forward", "idle_back", "idle_left", "idle_right")  var start_anim: String = "idle_forward"
+@export_enum("idle_forward", "idle_back", "idle_left", "idle_right")  var start_sprit_anim: String = "idle_forward"
 ##特殊起始动画，若其不为空，则顶替掉上面的四个选项的start_anim
-@export var special_start_anim: String = ""
+@export var special_start_sprite_anim: String = ""
+@export var start_normal_anim : String = ""
 @export_group("NormalAction")
 @export var idle : Array[String]
 @export_group("DialogueAction")
@@ -71,12 +72,14 @@ func _get_direction_name(prefix: String) -> String:
 	else:
 		return prefix + ("back" if last_direction.y < 0 else "forward")
 func _ready() -> void:
-	if special_start_anim != "":
-		start_anim = special_start_anim
+	if special_start_sprite_anim != "":
+		start_sprit_anim = special_start_sprite_anim
 	if Global.pending_exit_animation and Global.pending_exit_animation != "idle_forward":
 		_current_anim = Global.pending_exit_animation
 	else:
-		_current_anim = start_anim
+		_current_anim = start_sprit_anim
+	if start_normal_anim != "":
+		animation_player.play(start_normal_anim)
 	animated_sprite.play(_current_anim)
 	_anim_locked = true
 	Global.pending_exit_animation = "idle_forward"
@@ -90,9 +93,15 @@ func _ready() -> void:
 func _on_line_reached(group_id: String, line_index: int) -> void:
 	for action in ActionGroup:
 		if action.dialogue_id == group_id and action.line_index == line_index:
-			if action.animation_name != "" and has_node("AnimationPlayer"):
-				animation_player.play(action.animation_name)
-
+			if action.animation_name != "" :
+				continue
+			match action.player_node:
+				Action.PlayerNode.NORMAL_ANIMATION_PLAYER:
+					if has_node("AnimationPlayer"):
+						animation_player.play(action.animation_name)
+				Action.PlayerNode.SPRITE_ANIMATIONPLAYER:
+					if has_node("AnimatedSprite2D"):
+						animated_sprite.play(action.animation_name)
 
 
 

@@ -69,16 +69,19 @@ func _ready()-> void:
 	get_tree().scene_changed.connect(_on_scene_changed)
 	
 func _on_scene_changed():
+	Global.can_act = true
 	var root = get_tree().current_scene
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null :
 		return
 	var marker = root.find_child(_spawn_target,true,false)
-	if !marker == null :
+	if marker :
 		player.global_position = marker.global_position
 		if player is CharacterBody2D:
 			player.velocity = Vector2.ZERO
-			
+		var door := marker.get_parent()
+		if door.has_method("_play_door_close_animations"):
+			door._play_door_close_animations()
 	_spawn_target = ""
 
 
